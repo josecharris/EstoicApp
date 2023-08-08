@@ -1,0 +1,16 @@
+/* Cambia el color del icono "home" a dorado */
+ion-title[id="titulo"] {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    text-align: center;
+}
+
+#contenedor-acordeones{
+    margin-top: 10%;
+}
+
+ion-accordion-group{
+    margin-top: 10%;
+    width: 90%;
+    margin: 0 auto;
+}
