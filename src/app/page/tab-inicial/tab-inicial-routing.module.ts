@@ -34,15 +34,15 @@ const routes: Routes = [
       },
       {
         path: 'pilares',
-        loadChildren: () => import('./../../pilares/pilares.module').then( m => m.PilaresPageModule)
+        loadChildren: () => import('./../pilares/pilares.module').then( m => m.PilaresPageModule)
       },
       {
         path: 'mandamientos',
-        loadChildren: () => import('./../../mandamientos/mandamientos.module').then( m => m.MandamientosPageModule)
+        loadChildren: () => import('./../mandamientos/mandamientos.module').then( m => m.MandamientosPageModule)
       },
       {
         path: 'triada',
-        loadChildren: () => import('./../../triada/triada.module').then( m => m.TriadaPageModule)
+        loadChildren: () => import('./../triada/triada.module').then( m => m.TriadaPageModule)
       }
     ]
   }
