@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-triada',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TriadaPage implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router ) { }
 
   ngOnInit() {
+  }
+
+  public volver(): void{
+    this.router.navigate(['/tab-inicial/conceptos']);
   }
 
 }
