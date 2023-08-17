@@ -17,4 +17,8 @@ export class LecturasPage implements OnInit {
     this.router.navigate(['/tab-inicial/conceptos']);
   }
 
+  public volver(): void{
+    this.router.navigate(['/tab-inicial/estudiar']);
+  }
+
 }
