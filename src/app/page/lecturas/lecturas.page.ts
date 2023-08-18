@@ -17,11 +17,16 @@ export class LecturasPage implements OnInit {
   public navegarContenedorLectura( numeroLibro: number ): void {
     switch(numeroLibro){
       case 1:
+        this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Meditaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Marco Aurelio");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 2:
+        this.lecturaPasoParametrosService.infoLibro.clear();
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 3:
         break;
