@@ -1,16 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title id="titulo">{{title}}</ion-title>
+    <ion-title id="titulo">{{ tituloLibro }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">contenedor-lectura</ion-title>
-    </ion-toolbar>
-    <p>{{ nombreLibro }}</p>
+  <div class="container">
+    <p>{{ nombreLibro }} - {{ autorLibro}}</p>
     <p>{{ descLibro }}</p>
-    
-  </ion-header>
+  </div>
 </ion-content>
