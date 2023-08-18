@@ -71,6 +71,31 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
+      case 12:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Mi cuaderno estoico");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci y Gregory López");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        break;
+      case 13:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Diario para estoicos");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        break;
+      case 14:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Vida de los estoicos");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday y Stephen Hasselman");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        break;
+      case 15:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "La llamada del coraje");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        break;
+      case 16:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "El obstáculo es el camino");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        break;
       
     }
     this.router.navigate(['/tab-inicial/contenedor-lectura']);
