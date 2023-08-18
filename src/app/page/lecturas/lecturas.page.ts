@@ -13,8 +13,8 @@ export class LecturasPage implements OnInit {
   ngOnInit() {
   }
 
-  public navegarMeditaciones(): void {
-    this.router.navigate(['/tab-inicial/conceptos']);
+  public navegarContenedorLectura( numeroLibro: number ): void {
+    this.router.navigate(['/tab-inicial/contenedor-lectura']);
   }
 
   public volver(): void{

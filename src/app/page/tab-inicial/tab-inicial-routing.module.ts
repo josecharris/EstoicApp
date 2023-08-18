@@ -43,6 +43,10 @@ const routes: Routes = [
       {
         path: 'triada',
         loadChildren: () => import('./../triada/triada.module').then( m => m.TriadaPageModule)
+      },
+      {
+        path: 'contenedor-lectura',
+        loadChildren: () => import('./../contenedor-lectura/contenedor-lectura.module').then( m => m.ContenedorLecturaPageModule)
       }
     ]
   }
