@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ContenedorLecturaPage implements OnInit {
 
   public title: string = "Nombre del contenedor";
+  public nombreLibro: string = "Nombre del contenedor";
+  public descLibro: string = "Nombre del contenedor";
 
   constructor() { }
 
