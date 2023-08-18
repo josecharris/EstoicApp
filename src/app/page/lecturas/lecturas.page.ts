@@ -22,8 +22,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 2:
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Vidas y opiniones de los filósofos más ilustres");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Diogenes Laercio");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 3:
@@ -52,21 +52,21 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 8:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "De la tranquilidad del ánimo");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 9:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 10:
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Los Discursos o Disertaciones");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 11:
-        break;
-      case 12:
-        break;
-      case 13:
-        break;
-      case 14:
-        break;
-      case 15:
-        break;
+      
     }
     this.router.navigate(['/tab-inicial/contenedor-lectura']);
   }
