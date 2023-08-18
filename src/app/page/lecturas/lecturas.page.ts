@@ -27,8 +27,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 3:
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Cartas a Lucilio");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
       case 4:
