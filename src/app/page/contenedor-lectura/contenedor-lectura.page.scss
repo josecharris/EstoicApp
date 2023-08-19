@@ -22,16 +22,23 @@ ion-title[id="titulo"] {
 
 .container-buttons{
   display: flex;
+  flex-wrap: wrap;
 }
 
-ion-button{
+.buton-capitulo{
   font-family: 'Playfair Display', serif;
   font-weight: bold;
   --background: #121212;
   --color: white;
   height: 120px;
-  width: 35%;
-  margin: 0; /* Elimina los márgenes predeterminados de los botones */
-  --padding-start: 20px;
-  --padding-end: 20px;
+  width: calc(33.33% - 10px); /* Ajusta el ancho y el espacio entre componentes según tus necesidades */
+  margin: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Salto de línea cada 3 componentes */
+.buton-capitulo:nth-child(3n) {
+  margin-right: 0; /* Elimina el margen derecho del último componente en la fila */
+  margin-bottom: 15px; /* Agrega un margen inferior para el salto de línea */
 }
