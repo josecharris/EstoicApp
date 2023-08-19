@@ -20,6 +20,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Meditaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Marco Aurelio");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Es una obra atemporal que desvela las reflexiones íntimas de uno de los emperadores más influyentes de la historia. En este viaje literario, descubre la sabiduría de un líder que enfrentó los desafíos del poder y la vida con una mente clara y serena, ofreciéndonos lecciones perdurables para cultivar la paz interior en medio del caos exterior.");
+        this.lecturaPasoParametrosService.infoLibro.set("noCapitulos", "12");
+
         break;
       case 2:
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Vidas y opiniones de los filósofos más ilustres");

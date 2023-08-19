@@ -14,6 +14,7 @@ export class ContenedorLecturaPage implements OnInit {
   public nombreLibro: string = "";
   public autorLibro: string = "";
   public descLibro: string = "";
+  public noCapitulos = 0;
 
   constructor( private lecturaPasoParametrosService: LecturaPasoParametrosService,
     private router: Router ) { 
@@ -25,6 +26,7 @@ export class ContenedorLecturaPage implements OnInit {
         this.autorLibro = this.lecturaPasoParametrosService.infoLibro.get("autorLibro")!;
         this.descLibro = this.lecturaPasoParametrosService.infoLibro.get("descLibro")!;
         this.tituloLibro = this.lecturaPasoParametrosService.infoLibro.get("nombreLibro")!;
+        this.noCapitulos = Number(this.lecturaPasoParametrosService.infoLibro.get("noCapitulos")!);
       });
     }
 
@@ -33,6 +35,10 @@ export class ContenedorLecturaPage implements OnInit {
 
   public volver(): void{
     this.router.navigate(['/tab-inicial/conceptos']);
+  }
+
+  getRange(value: number): number[] {
+    return new Array(value);
   }
 
   public navegarCapitulo( numeroLibro: number ): void {

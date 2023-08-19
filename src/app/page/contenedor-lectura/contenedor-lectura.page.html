@@ -10,6 +10,11 @@
     <br><p>{{ descLibro }}</p>
     <br><br><p><strong>Capítulos:</strong></p>
   </div>
+  <div class="container-buttons">
+    <ion-button *ngFor="let index of getRange(noCapitulos); let i = index" expand="block" (click)="navegarCapitulo(i)">
+      <ion-icon name="book-outline"></ion-icon>{{ i }}
+    </ion-button>
+  </div><br><br><br>
 
   <div class="container-buttons">
     <ion-button expand="block" (click)="navegarCapitulo(1)">
