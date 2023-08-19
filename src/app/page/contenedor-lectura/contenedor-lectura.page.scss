@@ -19,3 +19,19 @@ ion-title[id="titulo"] {
   color: #D4AF37;
   margin: 0;
 }
+
+.container-buttons{
+  display: flex;
+}
+
+ion-button{
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  --background: #121212;
+  --color: white;
+  height: 120px;
+  width: 35%;
+  margin: 0; /* Elimina los márgenes predeterminados de los botones */
+  --padding-start: 20px;
+  --padding-end: 20px;
+}

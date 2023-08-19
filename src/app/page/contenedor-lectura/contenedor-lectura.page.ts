@@ -31,4 +31,12 @@ export class ContenedorLecturaPage implements OnInit {
   ngOnInit() {
   }
 
+  public volver(): void{
+    this.router.navigate(['/tab-inicial/conceptos']);
+  }
+
+  public navegarCapitulo( numeroLibro: number ): void {
+
+  }
+
 }

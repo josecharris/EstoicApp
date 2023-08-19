@@ -6,7 +6,54 @@
 
 <ion-content [fullscreen]="true">
   <div id="descripcion">
-    <p>El libro {{ nombreLibro }} se le atribuye la autoría a {{ autorLibro}},</p>
+    <p>El libro {{ nombreLibro }} de la autoría de {{ autorLibro}},</p>
     <br><p>{{ descLibro }}</p>
+    <br><br><p><strong>Capítulos:</strong></p>
   </div>
+
+  <div class="container-buttons">
+    <ion-button expand="block" (click)="navegarCapitulo(1)">
+      <ion-icon name="book-outline"></ion-icon>I
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(2)">
+      <ion-icon name="book-outline"></ion-icon>II
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(3)">
+      <ion-icon name="book-outline"></ion-icon>III
+    </ion-button>
+  </div>
+  <div class="container-buttons">
+    <ion-button expand="block" (click)="navegarCapitulo(4)">
+      <ion-icon name="book-outline"></ion-icon>IV
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(5)">
+      <ion-icon name="book-outline"></ion-icon>V
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(6)">
+      <ion-icon name="book-outline"></ion-icon>VI
+    </ion-button>
+  </div>
+  <div class="container-buttons">
+    <ion-button expand="block" (click)="navegarCapitulo(7)">
+      <ion-icon name="book-outline"></ion-icon>VII
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(8)">
+      <ion-icon name="book-outline"></ion-icon>VIII
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(9)">
+      <ion-icon name="book-outline"></ion-icon>9
+    </ion-button>
+  </div>
+  <div class="container-buttons">
+    <ion-button expand="block" (click)="navegarCapitulo(10)">
+      <ion-icon name="book-outline"></ion-icon>10
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(11)">
+      <ion-icon name="tablet-portrait-outline"></ion-icon>11
+    </ion-button>
+    <ion-button expand="block" (click)="navegarCapitulo(12)">
+      <ion-icon name="tablet-portrait-outline"></ion-icon>12
+    </ion-button>
+  </div>
+
 </ion-content>
