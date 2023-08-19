@@ -34,7 +34,7 @@ export class ContenedorLecturaPage implements OnInit {
   }
 
   public volver(): void{
-    this.router.navigate(['/tab-inicial/conceptos']);
+    this.router.navigate(['/tab-inicial/lecturas']);
   }
 
   getRange(value: number): number[] {
@@ -44,5 +44,6 @@ export class ContenedorLecturaPage implements OnInit {
   public navegarCapitulo( numeroLibro: number ): void {
 
   }
+  
 
 }
