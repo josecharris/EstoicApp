@@ -14,7 +14,9 @@ export class ContenedorLecturaPage implements OnInit {
   public nombreLibro: string = "";
   public autorLibro: string = "";
   public descLibro: string = "";
-  public noCapitulos = 0;
+  public descAdicional: string = "";
+  public nombreSeparador: string = "";
+  public cantidad = 0;
 
   constructor( private lecturaPasoParametrosService: LecturaPasoParametrosService,
     private router: Router ) { 
@@ -26,7 +28,9 @@ export class ContenedorLecturaPage implements OnInit {
         this.autorLibro = this.lecturaPasoParametrosService.infoLibro.get("autorLibro")!;
         this.descLibro = this.lecturaPasoParametrosService.infoLibro.get("descLibro")!;
         this.tituloLibro = this.lecturaPasoParametrosService.infoLibro.get("nombreLibro")!;
-        this.noCapitulos = Number(this.lecturaPasoParametrosService.infoLibro.get("noCapitulos")!);
+        this.descAdicional = this.lecturaPasoParametrosService.infoLibro.get("descAdicional")!;
+        this.nombreSeparador = this.lecturaPasoParametrosService.infoLibro.get("nombreSeparador")!;
+        this.cantidad = Number(this.lecturaPasoParametrosService.infoLibro.get("cantidad")!);
       });
     }
 

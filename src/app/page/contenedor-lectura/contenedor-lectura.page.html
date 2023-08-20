@@ -8,10 +8,11 @@
   <div id="descripcion">
     <p>El libro {{ nombreLibro }} de la autoría de {{ autorLibro}},</p>
     <br><p>{{ descLibro }}</p>
-    <br><br><p><strong>Capítulos:</strong></p>
+    <br><p *ngIf="descAdicional != null && descAdicional != ''">{{ descAdicional }}</p>
+    <br><br><p><strong>{{ nombreSeparador }}</strong></p>
   </div>
   <div class="container-buttons">
-    <ion-button class="buton-capitulo" *ngFor="let index of getRange(noCapitulos); let i = index" expand="block" (click)="navegarCapitulo(i)">
+    <ion-button class="buton-capitulo" *ngFor="let index of getRange(cantidad); let i = index" expand="block" (click)="navegarCapitulo(i)">
       <ion-icon name="book-outline"></ion-icon>&nbsp;{{ i + 1 }}
     </ion-button>
   </div>
