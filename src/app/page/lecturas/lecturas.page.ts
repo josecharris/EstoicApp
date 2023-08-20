@@ -45,7 +45,9 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Sobre la ira");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un análisis magistral de una emoción poderosa. Séneca, el sabio estoico, desentraña los laberintos de la ira y ofrece el antídoto para la serenidad. Un viaje hacia el autocontrol en medio de las tormentas emocionales, destilando la calma del conocimiento antiguo.");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Libros:");
+        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "3");
         break;
       case 5:
         this.lecturaPasoParametrosService.infoLibro.clear();
