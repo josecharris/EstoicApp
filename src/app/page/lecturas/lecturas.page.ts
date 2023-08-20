@@ -53,7 +53,9 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Sobre la constancia del sabio");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Adéntrate en el mundo interior de la fortaleza inquebrantable con 'De la constancia del sabio'. Séneca, el maestro estoico, desentraña los secretos de la serenidad en medio de tormentas emocionales. En un diálogo íntimo con la virtud, descubre cómo el sabio navega las aguas tumultuosas de la vida con una constancia inamovible. Un camino luminoso hacia la tranquilidad en medio de las turbulencias del mundo.");
+        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "19");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         break;
       case 6:
         this.lecturaPasoParametrosService.infoLibro.clear();
