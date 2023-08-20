@@ -42,7 +42,7 @@ export class ContenedorLecturaPage implements OnInit {
   }
 
   public navegarCapitulo( numeroLibro: number ): void {
-
+    
   }
   
 
