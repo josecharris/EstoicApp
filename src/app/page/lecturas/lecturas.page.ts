@@ -61,57 +61,53 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "De la tranquilidad del ánimo");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En un mundo agitado y tumultuoso, Séneca te invita a un viaje interior hacia la paz inquebrantable. En 'De la tranquilidad del ánimo', el sabio romano te guía con maestría a través de los laberintos de la vida, revelando el poder de la filosofía para liberarte de las cadenas de la ansiedad y conducirte a la serenidad que anhelas.");
+        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "15");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         break;
       case 7:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "De la tranquilidad del ánimo");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
-        break;
-      case 8:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 9:
+      case 8:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Los Discursos o Disertaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 10:
+      case 9:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Cómo ser un estoico");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 11:
+      case 10:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Mi cuaderno estoico");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci y Gregory López");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 12:
+      case 11:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Diario para estoicos");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 13:
+      case 12:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Vida de los estoicos");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday y Stephen Hasselman");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 14:
+      case 13:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "La llamada del coraje");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 15:
+      case 14:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "El obstáculo es el camino");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
