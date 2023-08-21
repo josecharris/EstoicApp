@@ -72,13 +72,14 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Sumérgete en la esencia de la sabiduría estoica con 'Enchiridion', la obra atemporal de Epicteto. En sus breves pero poderosas palabras, encontrarás un manual para forjar una mentalidad resiliente en medio de las tormentas de la vida. Prepárate para abrazar la autodisciplina, el desapego y la serenidad en tu búsqueda de una vida plena y virtuosa");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Enseñanzas:");
         this.lecturaPasoParametrosService.infoLibro.set("cantidad", "53");
-
         break;
       case 8:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Los Discursos o Disertaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Sumérgete en las conversaciones íntimas con el maestro estoico Epicteto a través de 'Los Discursos o Disertaciones'. Explora un vasto tesoro de sabiduría en estas charlas registradas, donde la filosofía se convierte en un faro para navegar las aguas de la vida. Desde la ética hasta la lógica y la virtud, este libro te lleva a un viaje de autodescubrimiento y empoderamiento a través de las palabras de un maestro que aún nos guía en la búsqueda de la sabiduría y la serenidad");
+        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "53");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Libro:");
         break;
       case 9:
         this.lecturaPasoParametrosService.infoLibro.clear();
