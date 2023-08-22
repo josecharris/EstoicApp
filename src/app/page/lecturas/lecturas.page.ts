@@ -39,7 +39,7 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un destello de claridad en un mundo fugaz. Séneca, el estoico, destila la esencia del tiempo en estas páginas conmovedoras. Un llamado a vivir plenamente en un instante, a abrazar la fugacidad y encontrar la eternidad en cada aliento.");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
-        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "21");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_brevedad_de_la_vida.pdf");
         break;
       case 4:
         this.lecturaPasoParametrosService.infoLibro.clear();
