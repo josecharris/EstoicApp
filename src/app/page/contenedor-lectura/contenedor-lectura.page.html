@@ -5,16 +5,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="descripcion">
+  <div id="descripcion" *ngIf="!mostrarVisorPDF">
     <p>El libro {{ nombreLibro }} de la autoría de {{ autorLibro}},</p>
     <br><p>{{ descLibro }}</p>
     <br><p *ngIf="descAdicional != null && descAdicional != ''">{{ descAdicional }}</p>
     <br><br><p><strong>{{ nombreSeparador }}</strong></p>
   </div>
-  <div class="container-buttons">
-    <ion-button class="buton-capitulo" *ngFor="let index of getRange(cantidad); let i = index" expand="block" (click)="navegarCapitulo(i)">
-      <ion-icon name="book-outline"></ion-icon>&nbsp;{{ i + 1 }}
-    </ion-button>
+  
+  <div class="contanier-buttons" *ngIf="!mostrarVisorPDF"><div class="wrapper"><div (click)="mostrarLibro()" class="ion-activatable ripple-parent">Ver libro<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
+
+  <div class="contenedor-visor-pdf" *ngIf="mostrarVisorPDF">
+    <ngx-extended-pdf-viewer
+      [src]="rutaPDFnombre" 
+      [height]="'auto'">
+    </ngx-extended-pdf-viewer>
   </div>
   <div class="contanier-buttons"><div class="wrapper"><div (click)="volver()" class="ion-activatable ripple-parent">Volver<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
 </ion-content>

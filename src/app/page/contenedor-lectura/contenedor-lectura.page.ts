@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
 import { filter } from 'rxjs/operators';
+import { pdfDefaultOptions } from "ngx-extended-pdf-viewer";
 
 @Component({
   selector: 'app-contenedor-lectura',
@@ -11,12 +12,15 @@ import { filter } from 'rxjs/operators';
 export class ContenedorLecturaPage implements OnInit {
 
   public tituloLibro: string = "";
+  public nombreArchivo: string = "";
   public nombreLibro: string = "";
   public autorLibro: string = "";
   public descLibro: string = "";
   public descAdicional: string = "";
   public nombreSeparador: string = "";
   public cantidad = 0;
+  public mostrarVisorPDF = false;
+  public rutaPDFnombre: string = "";
 
   constructor( private lecturaPasoParametrosService: LecturaPasoParametrosService,
     private router: Router ) { 
@@ -30,7 +34,10 @@ export class ContenedorLecturaPage implements OnInit {
         this.tituloLibro = this.lecturaPasoParametrosService.infoLibro.get("nombreLibro")!;
         this.descAdicional = this.lecturaPasoParametrosService.infoLibro.get("descAdicional")!;
         this.nombreSeparador = this.lecturaPasoParametrosService.infoLibro.get("nombreSeparador")!;
-        this.cantidad = Number(this.lecturaPasoParametrosService.infoLibro.get("cantidad")!);
+        this.nombreArchivo = this.lecturaPasoParametrosService.infoLibro.get("nombreArchivo")!;
+
+        this.rutaPDFnombre = "/assets/files/pdf/" + this.nombreArchivo;
+        this.mostrarVisorPDF = false;
       });
     }
 
@@ -45,8 +52,8 @@ export class ContenedorLecturaPage implements OnInit {
     return new Array(value);
   }
 
-  public navegarCapitulo( numeroLibro: number ): void {
-    
+  public mostrarLibro( ): void {
+    this.mostrarVisorPDF = true;
   }
   
 
