@@ -23,6 +23,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Es una obra atemporal que desvela las reflexiones íntimas de uno de los emperadores más influyentes de la historia. En este viaje literario, descubre la sabiduría de un líder que enfrentó los desafíos del poder y la vida con una mente clara y serena, ofreciéndonos lecciones perdurables para cultivar la paz interior en medio del caos exterior.");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "meditaciones.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "http://bibliotecadigital.ilce.edu.mx/Colecciones/ObrasClasicas/_docs/Meditaciones_MarcoAurelio.pdf");
+
         break;
       case 2:
         this.lecturaPasoParametrosService.infoLibro.clear();
@@ -32,6 +34,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descAdicional", "Este libro está compuesto por el siguiente número de cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "cartas_a_lucilio.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "http://bibliotecadigital.ilce.edu.mx/Colecciones/ObrasClasicas/_docs/Meditaciones_MarcoAurelio.pdf");
+
         break;
       case 3:
         this.lecturaPasoParametrosService.infoLibro.clear();
@@ -40,6 +44,7 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un destello de claridad en un mundo fugaz. Séneca, el estoico, destila la esencia del tiempo en estas páginas conmovedoras. Un llamado a vivir plenamente en un instante, a abrazar la fugacidad y encontrar la eternidad en cada aliento.");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_brevedad_de_la_vida.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.bibliotecavirtualdeandalucia.es/catalogo/es/catalogo_imagenes/grupo.do?path=1014408");
         break;
       case 4:
         this.lecturaPasoParametrosService.infoLibro.clear();

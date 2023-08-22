@@ -18,6 +18,7 @@ export class ContenedorLecturaPage implements OnInit {
   public descLibro: string = "";
   public descAdicional: string = "";
   public nombreSeparador: string = "";
+  public cita: string = "";
   public cantidad = 0;
   public mostrarVisorPDF = false;
   public rutaPDFnombre: string = "";
@@ -35,7 +36,7 @@ export class ContenedorLecturaPage implements OnInit {
         this.descAdicional = this.lecturaPasoParametrosService.infoLibro.get("descAdicional")!;
         this.nombreSeparador = this.lecturaPasoParametrosService.infoLibro.get("nombreSeparador")!;
         this.nombreArchivo = this.lecturaPasoParametrosService.infoLibro.get("nombreArchivo")!;
-
+        this.cita = this.lecturaPasoParametrosService.infoLibro.get("cita")!;
         this.rutaPDFnombre = "/assets/files/pdf/" + this.nombreArchivo;
         this.mostrarVisorPDF = false;
       });
