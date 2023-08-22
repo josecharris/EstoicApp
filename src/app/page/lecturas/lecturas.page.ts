@@ -53,6 +53,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un análisis magistral de una emoción poderosa. Séneca, el sabio estoico, desentraña los laberintos de la ira y ofrece el antídoto para la serenidad. Un viaje hacia el autocontrol en medio de las tormentas emocionales, destilando la calma del conocimiento antiguo.");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Libros:");
         this.lecturaPasoParametrosService.infoLibro.set("cantidad", "3");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_ira.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.elejandria.com/libro/de-la-ira/seneca/1265");
         break;
       case 5:
         this.lecturaPasoParametrosService.infoLibro.clear();
