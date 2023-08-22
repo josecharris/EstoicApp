@@ -86,6 +86,7 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Cómo ser un estoico");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "53");
         break;
       case 10:
         this.lecturaPasoParametrosService.infoLibro.clear();
