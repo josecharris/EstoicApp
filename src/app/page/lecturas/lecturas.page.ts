@@ -31,7 +31,7 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un compendio íntimo y cautivador de sabiduría atemporal. Las epístolas de Séneca te guían a través de la vida, la virtud y el arte de vivir bien. Una conversación con un antiguo sabio que resuena poderosamente en el presente.");
         this.lecturaPasoParametrosService.infoLibro.set("descAdicional", "Este libro está compuesto por el siguiente número de cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Cartas:");
-        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "124");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "cartas_a_lucilio.pdf");
         break;
       case 3:
         this.lecturaPasoParametrosService.infoLibro.clear();
