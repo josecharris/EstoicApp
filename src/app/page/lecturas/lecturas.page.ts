@@ -106,7 +106,7 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "El libro es una guía moderna que explora las antiguas enseñanzas estoicas a través de los ojos del filósofo Massimo Pigliucci. Descubre cómo aplicar la sabiduría atemporal de los estoicos para navegar los desafíos de la vida moderna y encontrar la serenidad en medio del caos. Este libro te llevará en un viaje transformador hacia la autenticidad y la resiliencia interior.");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "como_ser_estoico.pdf");
-        break;
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.academia.edu/59408352/C%C3%B3mo_ser_un_Estoico_Massimo_Pigliucci");
         break;
       case 11:
         this.lecturaPasoParametrosService.infoLibro.clear();
