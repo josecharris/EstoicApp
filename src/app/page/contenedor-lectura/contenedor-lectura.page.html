@@ -9,7 +9,7 @@
     <p>El libro {{ nombreLibro }} de la autoría de {{ autorLibro}},</p>
     <br><p>{{ descLibro }}</p>
     <br><p *ngIf="descAdicional != null && descAdicional != ''">{{ descAdicional }}</p><br><br>
-    <p>El texto fue tomado de la página: {{ cita }}</p>
+    <p *ngIf="cita != null && cita != ''">El texto fue tomado de la página: {{ cita }}</p>
     <br><br><p><strong>{{ nombreSeparador }}</strong></p>
   </div>
   
