@@ -119,7 +119,9 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Diario para estoicos");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Bienvenido a las páginas de 'Diario para Estoicos', un refugio para las mentes modernas sedientas de tranquilidad en un mundo frenético. Entre estas líneas, encontrarás un espacio de reflexión diaria, inspirado por los principios atemporales del estoicismo. Aquí, la serenidad se entrelaza con la acción, y la introspección te guiará hacia una vida de virtud y resiliencia. Prepara tu pluma y corazón, porque este diario te invita a cultivar la fortaleza interior mientras te enfrentas a las complejidades de la vida contemporánea.");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "diario_para_estoicos.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://pdfcoffee.com/download/el-diario-estoico-366-dias-de-meditacion-4-pdf-free.html");
         break;
       case 13:
         this.lecturaPasoParametrosService.infoLibro.clear();
