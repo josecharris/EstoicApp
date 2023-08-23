@@ -49,7 +49,7 @@ export class ContenedorLecturaPage implements OnInit {
     this.router.navigate(['/tab-inicial/lecturas']);
   }
 
-  getRange(value: number): number[] {
+  public getRange(value: number): number[] {
     return new Array(value);
   }
 

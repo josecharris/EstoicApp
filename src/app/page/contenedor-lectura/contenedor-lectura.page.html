@@ -15,6 +15,7 @@
   
   <div class="contanier-buttons" *ngIf="!mostrarVisorPDF"><div class="wrapper"><div (click)="mostrarLibro()" class="ion-activatable ripple-parent">Ver libro<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
 
+
   <div class="contenedor-visor-pdf" *ngIf="mostrarVisorPDF">
     <ngx-extended-pdf-viewer
       [src]="rutaPDFnombre" 

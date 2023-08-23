@@ -81,7 +81,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Sumérgete en la esencia de la sabiduría estoica con 'Enchiridion', la obra atemporal de Epicteto. En sus breves pero poderosas palabras, encontrarás un manual para forjar una mentalidad resiliente en medio de las tormentas de la vida. Prepárate para abrazar la autodisciplina, el desapego y la serenidad en tu búsqueda de una vida plena y virtuosa");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Enseñanzas:");
-        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "53");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "manual.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://web.seducoahuila.gob.mx/biblioweb/upload/Epicteto%20-%20Manual%20De%20Epicteto.pdf");
         break;
       case 8:
         this.lecturaPasoParametrosService.infoLibro.clear();
