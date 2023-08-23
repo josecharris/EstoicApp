@@ -17,7 +17,6 @@ export class ContenedorLecturaPage implements OnInit {
   public autorLibro: string = "";
   public descLibro: string = "";
   public descAdicional: string = "";
-  public nombreSeparador: string = "";
   public cita: string = "";
   public cantidad = 0;
   public mostrarVisorPDF = false;
@@ -34,7 +33,6 @@ export class ContenedorLecturaPage implements OnInit {
         this.descLibro = this.lecturaPasoParametrosService.infoLibro.get("descLibro")!;
         this.tituloLibro = this.lecturaPasoParametrosService.infoLibro.get("nombreLibro")!;
         this.descAdicional = this.lecturaPasoParametrosService.infoLibro.get("descAdicional")!;
-        this.nombreSeparador = this.lecturaPasoParametrosService.infoLibro.get("nombreSeparador")!;
         this.nombreArchivo = this.lecturaPasoParametrosService.infoLibro.get("nombreArchivo")!;
         this.cita = this.lecturaPasoParametrosService.infoLibro.get("cita")!;
         this.rutaPDFnombre = "/assets/files/pdf/" + this.nombreArchivo;

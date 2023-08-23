@@ -10,7 +10,6 @@
     <br><p>{{ descLibro }}</p>
     <br><p *ngIf="descAdicional != null && descAdicional != ''">{{ descAdicional }}</p><br><br>
     <p *ngIf="cita != null && cita != ''">El texto fue tomado de la página: {{ cita }}</p>
-    <br><br><p><strong>{{ nombreSeparador }}</strong></p>
   </div>
   
   <div class="contanier-buttons" *ngIf="!mostrarVisorPDF"><div class="wrapper"><div (click)="mostrarLibro()" class="ion-activatable ripple-parent">Ver libro<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
