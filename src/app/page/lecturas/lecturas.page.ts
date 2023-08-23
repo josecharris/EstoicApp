@@ -86,6 +86,14 @@ export class LecturasPage implements OnInit {
         break;
       case 8:
         this.lecturaPasoParametrosService.infoLibro.clear();
+        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion ilustrado");
+        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Las enseñanzas del maestro Epicteto dada de forma ilustrada haciendo su enseñanza más agradable y amena.");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Libro:");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "manual_ilustrado.pdf");
+        break;
+      case 9:
+        this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Los Discursos o Disertaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Sumérgete en las conversaciones íntimas con el maestro estoico Epicteto a través de 'Los Discursos o Disertaciones'. Explora un vasto tesoro de sabiduría en estas charlas registradas, donde la filosofía se convierte en un faro para navegar las aguas de la vida. Desde la ética hasta la lógica y la virtud, este libro te lleva a un viaje de autodescubrimiento y empoderamiento a través de las palabras de un maestro que aún nos guía en la búsqueda de la sabiduría y la serenidad");
@@ -93,38 +101,38 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "disertaciones.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://dokumen.tips/documents/epicteto-disertaciones-por-arriano-editorial-gredospdf.html");
         break;
-      case 9:
+      case 10:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Cómo ser un estoico");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "El libro es una guía moderna que explora las antiguas enseñanzas estoicas a través de los ojos del filósofo Massimo Pigliucci. Descubre cómo aplicar la sabiduría atemporal de los estoicos para navegar los desafíos de la vida moderna y encontrar la serenidad en medio del caos. Este libro te llevará en un viaje transformador hacia la autenticidad y la resiliencia interior.");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "como_ser_estoico.pdf");
         break;
-      case 10:
+      case 11:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Mi cuaderno estoico");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci y Gregory López");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 11:
+      case 12:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Diario para estoicos");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 12:
+      case 13:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Vida de los estoicos");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday y Stephen Hasselman");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 13:
+      case 14:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "La llamada del coraje");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
         break;
-      case 14:
+      case 15:
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "El obstáculo es el camino");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
