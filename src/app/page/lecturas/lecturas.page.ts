@@ -71,8 +71,9 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "De la tranquilidad del ánimo");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En un mundo agitado y tumultuoso, Séneca te invita a un viaje interior hacia la paz inquebrantable. En 'De la tranquilidad del ánimo', el sabio romano te guía con maestría a través de los laberintos de la vida, revelando el poder de la filosofía para liberarte de las cadenas de la ansiedad y conducirte a la serenidad que anhelas.");
-        this.lecturaPasoParametrosService.infoLibro.set("cantidad", "15");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_tranquilidad_del_animo.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://ministeriodeeducacion.gob.do/docs/biblioteca-virtual/B6tO-seneca-lucio-anneo-de-la-tranquilidad-de-animopdf.pdf");
         break;
       case 7:
         this.lecturaPasoParametrosService.infoLibro.clear();
