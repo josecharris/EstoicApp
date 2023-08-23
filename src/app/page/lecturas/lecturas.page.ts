@@ -112,7 +112,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Mi cuaderno estoico");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci y Gregory López");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En las páginas de 'Mi cuaderno estoico', descubrirás un viaje íntimo hacia la sabiduría atemporal de los filósofos estoicos. En este compendio cautivador, explorarás las enseñanzas que han forjado mentes fuertes a lo largo de los siglos, guiándote hacia la claridad mental, la resistencia emocional y una vida plena en armonía con el universo. Prepárate para desentrañar las joyas del estoicismo y aplicarlas en tu día a día, mientras te sumerges en una travesía transformadora de autodescubrimiento y crecimiento personal.");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "mi_cuaderno_estoico.pdf");
         break;
       case 12:
         this.lecturaPasoParametrosService.infoLibro.clear();
