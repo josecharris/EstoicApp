@@ -140,7 +140,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "El obstáculo es el camino");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En la encrucijada de los desafíos yace la semilla del triunfo. El Obstáculo es el Camino nos sumerge en un universo donde las adversidades se erigen como escalones hacia la grandeza. A través de historias inspiradoras, descubrimos cómo transformar obstáculos en oportunidades, abrazando la lucha como el sendero hacia el empoderamiento y la realización personal. En estas páginas, el camino menos transitado se revela como la ruta hacia el autodescubrimiento y el éxito perdurable.");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "el_obstaculo_es_el_camino.pdf");
         break;
     }
     this.router.navigate(['/tab-inicial/contenedor-lectura']);
