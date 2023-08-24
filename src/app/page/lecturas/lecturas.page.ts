@@ -133,7 +133,8 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "La llamada del coraje");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
+        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "La Llamada del Coraje nos sumerge en un viaje épico donde valientes almas se alzan contra la adversidad, forjando destinos y desafiando su propio temor. En medio de la incertidumbre, la promesa de la valentía se alza como un faro, guiando a aquellos dispuestos a enfrentar lo desconocido y cambiar el curso del destino.");
+        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "la_llamada_del_coraje.pdf");
         break;
       case 15:
         this.lecturaPasoParametrosService.infoLibro.clear();
