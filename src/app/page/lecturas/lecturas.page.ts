@@ -21,7 +21,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Meditaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Marco Aurelio");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Es una obra atemporal que desvela las reflexiones íntimas de uno de los emperadores más influyentes de la historia. En este viaje literario, descubre la sabiduría de un líder que enfrentó los desafíos del poder y la vida con una mente clara y serena, ofreciéndonos lecciones perdurables para cultivar la paz interior en medio del caos exterior.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "meditaciones.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "http://bibliotecadigital.ilce.edu.mx/Colecciones/ObrasClasicas/_docs/Meditaciones_MarcoAurelio.pdf");
         break;
@@ -31,7 +30,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un compendio íntimo y cautivador de sabiduría atemporal. Las epístolas de Séneca te guían a través de la vida, la virtud y el arte de vivir bien. Una conversación con un antiguo sabio que resuena poderosamente en el presente.");
         this.lecturaPasoParametrosService.infoLibro.set("descAdicional", "Este libro está compuesto por el siguiente número de cartas:");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "cartas_a_lucilio.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.bibliotecavirtualdeandalucia.es/catalogo/catalogo_imagenes/grupo.do?path=1004872");
         break;
@@ -40,7 +38,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Sobre la brevedad de la vida");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un destello de claridad en un mundo fugaz. Séneca, el estoico, destila la esencia del tiempo en estas páginas conmovedoras. Un llamado a vivir plenamente en un instante, a abrazar la fugacidad y encontrar la eternidad en cada aliento.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_brevedad_de_la_vida.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.bibliotecavirtualdeandalucia.es/catalogo/es/catalogo_imagenes/grupo.do?path=1014408");
         break;
@@ -49,7 +46,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Sobre la ira");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Un análisis magistral de una emoción poderosa. Séneca, el sabio estoico, desentraña los laberintos de la ira y ofrece el antídoto para la serenidad. Un viaje hacia el autocontrol en medio de las tormentas emocionales, destilando la calma del conocimiento antiguo.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Libros:");
         this.lecturaPasoParametrosService.infoLibro.set("cantidad", "3");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_ira.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.elejandria.com/libro/de-la-ira/seneca/1265");
@@ -60,7 +56,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Adéntrate en el mundo interior de la fortaleza inquebrantable con 'De la constancia del sabio'. Séneca, el maestro estoico, desentraña los secretos de la serenidad en medio de tormentas emocionales. En un diálogo íntimo con la virtud, descubre cómo el sabio navega las aguas tumultuosas de la vida con una constancia inamovible. Un camino luminoso hacia la tranquilidad en medio de las turbulencias del mundo.");
         this.lecturaPasoParametrosService.infoLibro.set("cantidad", "19");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_constancia_del_sabio.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.elejandria.com/libro/de-la-constancia-del-sabio/seneca/1263");
         break;
@@ -69,7 +64,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "De la tranquilidad del ánimo");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Séneca");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En un mundo agitado y tumultuoso, Séneca te invita a un viaje interior hacia la paz inquebrantable. En 'De la tranquilidad del ánimo', el sabio romano te guía con maestría a través de los laberintos de la vida, revelando el poder de la filosofía para liberarte de las cadenas de la ansiedad y conducirte a la serenidad que anhelas.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "de_la_tranquilidad_del_animo.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://ministeriodeeducacion.gob.do/docs/biblioteca-virtual/B6tO-seneca-lucio-anneo-de-la-tranquilidad-de-animopdf.pdf");
         break;
@@ -78,7 +72,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Sumérgete en la esencia de la sabiduría estoica con 'Enchiridion', la obra atemporal de Epicteto. En sus breves pero poderosas palabras, encontrarás un manual para forjar una mentalidad resiliente en medio de las tormentas de la vida. Prepárate para abrazar la autodisciplina, el desapego y la serenidad en tu búsqueda de una vida plena y virtuosa");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Enseñanzas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "manual.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://web.seducoahuila.gob.mx/biblioweb/upload/Epicteto%20-%20Manual%20De%20Epicteto.pdf");
         break;
