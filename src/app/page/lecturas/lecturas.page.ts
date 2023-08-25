@@ -24,7 +24,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Capítulos:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "meditaciones.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "http://bibliotecadigital.ilce.edu.mx/Colecciones/ObrasClasicas/_docs/Meditaciones_MarcoAurelio.pdf");
-
         break;
       case 2:
         this.lecturaPasoParametrosService.infoLibro.clear();
@@ -34,7 +33,7 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("descAdicional", "Este libro está compuesto por el siguiente número de cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "cartas_a_lucilio.pdf");
-        this.lecturaPasoParametrosService.infoLibro.set("cita", "http://bibliotecadigital.ilce.edu.mx/Colecciones/ObrasClasicas/_docs/Meditaciones_MarcoAurelio.pdf");
+        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.bibliotecavirtualdeandalucia.es/catalogo/catalogo_imagenes/grupo.do?path=1004872");
         break;
       case 3:
         this.lecturaPasoParametrosService.infoLibro.clear();
