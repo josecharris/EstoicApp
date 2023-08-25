@@ -3,3 +3,21 @@ ion-title[id="titulo"] {
     color: #D4AF37;
     text-align: center;
 }
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+  
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+}
+
+ion-card{
+    width: 90%;
+    height: 70%;
+}

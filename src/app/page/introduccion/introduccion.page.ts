@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swiper from 'swiper';
+
 
 @Component({
   selector: 'app-introduccion',
@@ -10,6 +12,10 @@ export class IntroduccionPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      // Otras opciones de configuración aquí
+    });
   }
 
 }
