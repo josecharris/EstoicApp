@@ -32,6 +32,12 @@ export class FrasesPage implements OnInit {
       autor: "EPICTETO",
       explicacion: "Concentrarnos en lo que podemos controlar nos permite evitar la frustración y enfocarnos en lo que realmente importa.",
       image: "./../../../assets/images/leyendo.avif"
+    },
+    {
+      frase: "La felicidad yace en la virtud, y no en la riqueza o el placer.",
+      autor: "MARCO AURELIO",
+      explicacion: "Buscar una vida virtuosa es el camino hacia la auténtica felicidad, independientemente de las posesiones materiales.",
+      image: "./../../../assets/images/escultura.jpg"
     }
   ];
   constructor() { }
