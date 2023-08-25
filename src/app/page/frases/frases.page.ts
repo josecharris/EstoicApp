@@ -26,6 +26,12 @@ export class FrasesPage implements OnInit {
       autor: "SENECA",
       explicacion: "La honestidad y la búsqueda de la verdad son fundamentales para cultivar la sabiduría en nuestras vidas.",
       image: "./../../../assets/images/seneca.avif"
+    }, 
+    {
+      frase: "No te afanes por las cosas que están fuera de tu poder.",
+      autor: "EPICTETO",
+      explicacion: "Concentrarnos en lo que podemos controlar nos permite evitar la frustración y enfocarnos en lo que realmente importa.",
+      image: "./../../../assets/images/leyendo.avif"
     }
   ];
   constructor() { }
