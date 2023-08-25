@@ -21,6 +21,12 @@ export class FrasesPage implements OnInit {
       explicacion: "Nuestras emociones están influenciadas por cómo interpretamos las situaciones. Elegir interpretaciones sabias y serenas nos ayuda a mantener la calma.",
       image: "./../../../assets/images/color.avif"
     },
+    {
+      frase: "El hombre sabio es siempre amigo de la verdad.",
+      autor: "SENECA",
+      explicacion: "La honestidad y la búsqueda de la verdad son fundamentales para cultivar la sabiduría en nuestras vidas.",
+      image: "./../../../assets/images/seneca.avif"
+    }
   ];
   constructor() { }
 
