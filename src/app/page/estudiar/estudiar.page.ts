@@ -12,6 +12,9 @@ export class EstudiarPage implements OnInit {
 
   ngOnInit() {
   }
+  public navegarIntroduccion(){
+    this.router.navigate(['/tab-inicial/introduccion']);
+  }
 
   public navegarConceptos(): void {
     this.router.navigate(['/tab-inicial/conceptos']);
