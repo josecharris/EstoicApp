@@ -7,57 +7,18 @@
 <ion-content>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
+      <div class="swiper-slide" *ngFor="let frase of frases">
         <ion-card>
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
           <ion-card-header>
-            <ion-card-subtitle>Slide 1</ion-card-subtitle>
+            <ion-card-title style="font-size: 20px;"><i>{{ frase.frase }}</i></ion-card-title>
+            <ion-card-subtitle>{{ frase.autor }}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            Content of Slide 1
+            {{ frase.explicacion }}
           </ion-card-content>
         </ion-card>
       </div>
-      <div class="swiper-slide">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Slide 2</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Content of Slide 2
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="swiper-slide">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Slide 3</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Content of Slide 3
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="swiper-slide">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Slide 4</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Content of Slide 4
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="swiper-slide">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Slide 5</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Content of Slide 5
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <!-- Agrega más slides aquí -->
     </div>
   </div>
 </ion-content>
