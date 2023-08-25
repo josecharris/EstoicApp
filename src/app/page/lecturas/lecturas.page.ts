@@ -35,7 +35,6 @@ export class LecturasPage implements OnInit {
         this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Cartas:");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "cartas_a_lucilio.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "http://bibliotecadigital.ilce.edu.mx/Colecciones/ObrasClasicas/_docs/Meditaciones_MarcoAurelio.pdf");
-
         break;
       case 3:
         this.lecturaPasoParametrosService.infoLibro.clear();
@@ -86,62 +85,11 @@ export class LecturasPage implements OnInit {
         break;
       case 8:
         this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Enquiridion ilustrado");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Las enseñanzas del maestro Epicteto dada de forma ilustrada haciendo su enseñanza más agradable y amena.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreSeparador", "Libro:");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "manual_ilustrado.pdf");
-        break;
-      case 9:
-        this.lecturaPasoParametrosService.infoLibro.clear();
         this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Los Discursos o Disertaciones");
         this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Epicteto");
         this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Sumérgete en las conversaciones íntimas con el maestro estoico Epicteto a través de 'Los Discursos o Disertaciones'. Explora un vasto tesoro de sabiduría en estas charlas registradas, donde la filosofía se convierte en un faro para navegar las aguas de la vida. Desde la ética hasta la lógica y la virtud, este libro te lleva a un viaje de autodescubrimiento y empoderamiento a través de las palabras de un maestro que aún nos guía en la búsqueda de la sabiduría y la serenidad");
         this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "disertaciones.pdf");
         this.lecturaPasoParametrosService.infoLibro.set("cita", "https://dokumen.tips/documents/epicteto-disertaciones-por-arriano-editorial-gredospdf.html");
-        break;
-      case 10:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Cómo ser un estoico");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "El libro es una guía moderna que explora las antiguas enseñanzas estoicas a través de los ojos del filósofo Massimo Pigliucci. Descubre cómo aplicar la sabiduría atemporal de los estoicos para navegar los desafíos de la vida moderna y encontrar la serenidad en medio del caos. Este libro te llevará en un viaje transformador hacia la autenticidad y la resiliencia interior.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "como_ser_estoico.pdf");
-        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://www.academia.edu/59408352/C%C3%B3mo_ser_un_Estoico_Massimo_Pigliucci");
-        break;
-      case 11:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Mi cuaderno estoico");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Massimo Pigliucci y Gregory López");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En las páginas de 'Mi cuaderno estoico', descubrirás un viaje íntimo hacia la sabiduría atemporal de los filósofos estoicos. En este compendio cautivador, explorarás las enseñanzas que han forjado mentes fuertes a lo largo de los siglos, guiándote hacia la claridad mental, la resistencia emocional y una vida plena en armonía con el universo. Prepárate para desentrañar las joyas del estoicismo y aplicarlas en tu día a día, mientras te sumerges en una travesía transformadora de autodescubrimiento y crecimiento personal.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "mi_cuaderno_estoico.pdf");
-        break;
-      case 12:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Diario para estoicos");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Bienvenido a las páginas de 'Diario para Estoicos', un refugio para las mentes modernas sedientas de tranquilidad en un mundo frenético. Entre estas líneas, encontrarás un espacio de reflexión diaria, inspirado por los principios atemporales del estoicismo. Aquí, la serenidad se entrelaza con la acción, y la introspección te guiará hacia una vida de virtud y resiliencia. Prepara tu pluma y corazón, porque este diario te invita a cultivar la fortaleza interior mientras te enfrentas a las complejidades de la vida contemporánea.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "diario_para_estoicos.pdf");
-        this.lecturaPasoParametrosService.infoLibro.set("cita", "https://pdfcoffee.com/download/el-diario-estoico-366-dias-de-meditacion-4-pdf-free.html");
-        break;
-      case 13:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "Vida de los estoicos");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday y Stephen Hasselman");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "Descripción del libro");
-        break;
-      case 14:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "La llamada del coraje");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "La Llamada del Coraje nos sumerge en un viaje épico donde valientes almas se alzan contra la adversidad, forjando destinos y desafiando su propio temor. En medio de la incertidumbre, la promesa de la valentía se alza como un faro, guiando a aquellos dispuestos a enfrentar lo desconocido y cambiar el curso del destino.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "la_llamada_del_coraje.pdf");
-        break;
-      case 15:
-        this.lecturaPasoParametrosService.infoLibro.clear();
-        this.lecturaPasoParametrosService.infoLibro.set("nombreLibro", "El obstáculo es el camino");
-        this.lecturaPasoParametrosService.infoLibro.set("autorLibro", "Ryan Holiday");
-        this.lecturaPasoParametrosService.infoLibro.set("descLibro", "En la encrucijada de los desafíos yace la semilla del triunfo. El Obstáculo es el Camino nos sumerge en un universo donde las adversidades se erigen como escalones hacia la grandeza. A través de historias inspiradoras, descubrimos cómo transformar obstáculos en oportunidades, abrazando la lucha como el sendero hacia el empoderamiento y la realización personal. En estas páginas, el camino menos transitado se revela como la ruta hacia el autodescubrimiento y el éxito perdurable.");
-        this.lecturaPasoParametrosService.infoLibro.set("nombreArchivo", "el_obstaculo_es_el_camino.pdf");
         break;
     }
     this.router.navigate(['/tab-inicial/contenedor-lectura']);
