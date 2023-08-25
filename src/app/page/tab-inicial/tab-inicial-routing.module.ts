@@ -47,6 +47,10 @@ const routes: Routes = [
       {
         path: 'contenedor-lectura',
         loadChildren: () => import('./../contenedor-lectura/contenedor-lectura.module').then( m => m.ContenedorLecturaPageModule)
+      },
+      {
+        path: 'introduccion',
+        loadChildren: () => import('./../introduccion/introduccion.module').then( m => m.IntroduccionPageModule)
       }
     ]
   }
