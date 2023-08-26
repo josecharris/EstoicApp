@@ -44,6 +44,12 @@ export class FrasesPage implements OnInit {
       autor: "SENECA",
       explicacion: "Apegarnos excesivamente a las posesiones materiales nos puede esclavizar, y la verdadera libertad radica en no depender de ellas.",
       image: "./../../../assets/images/seneca.avif"
+    },
+    {
+      frase: "La muerte no nos concierne, porque mientras somos, la muerte no es, y cuando la muerte es, nosotros no somos.",
+      autor: "EPICURO",
+      explicacion: "Aceptar la naturaleza transitoria de la vida nos permite vivir plenamente y apreciar cada momento.",
+      image: "./../../../assets/images/memento_mori.png"
     }
   ];
   constructor() { }
