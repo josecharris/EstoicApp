@@ -38,6 +38,12 @@ export class FrasesPage implements OnInit {
       autor: "MARCO AURELIO",
       explicacion: "Buscar una vida virtuosa es el camino hacia la auténtica felicidad, independientemente de las posesiones materiales.",
       image: "./../../../assets/images/escultura.jpg"
+    },
+    {
+      frase: "No te conviertas en esclavo de ninguna posesión, ya que, a través de un aumento en tu fortuna, puedes adquirir un amo.",
+      autor: "SENECA",
+      explicacion: "Apegarnos excesivamente a las posesiones materiales nos puede esclavizar, y la verdadera libertad radica en no depender de ellas.",
+      image: "./../../../assets/images/seneca.avif"
     }
   ];
   constructor() { }
