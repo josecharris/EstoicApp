@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
 import { filter } from 'rxjs/operators';
-import { pdfDefaultOptions } from "ngx-extended-pdf-viewer";
 
 @Component({
   selector: 'app-contenedor-lectura',

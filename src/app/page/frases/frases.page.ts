@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper';
 import jsonFile from  './../../../assets/files/json/frases.json';
 import { Frase } from 'src/app/dto/frase.dto';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -16,9 +18,14 @@ export class FrasesPage implements OnInit {
   public asset: string = "./../../../assets/images/";
   public imagenes: string[] = [];
 
-  constructor() {
+  constructor( private router: Router ) {
     this.cargarImagenes();
-    this.cargarJSON();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.cargarJSON();
+        this.frases = this.ordenarListaAleatorio(this.frases);
+      });
   }
 
   ngOnInit() {
@@ -51,5 +58,16 @@ export class FrasesPage implements OnInit {
     this.imagenes.push("pensando.jpg");
     this.imagenes.push("seneca.avif");
   }
+
+  /** Algoritmo de Fisher-Yates */
+  private ordenarListaAleatorio(array: Frase[]): Frase[] {
+    const listaModificada = array.slice(); // Copia del array original
+    for (let i = listaModificada.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        // Intercambiar elementos
+        [listaModificada[i], listaModificada[j]] = [listaModificada[j], listaModificada[i]];
+    }
+    return listaModificada;
+}
 
 }
