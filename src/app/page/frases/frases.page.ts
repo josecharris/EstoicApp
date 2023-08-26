@@ -50,6 +50,12 @@ export class FrasesPage implements OnInit {
       autor: "EPICURO",
       explicacion: "Aceptar la naturaleza transitoria de la vida nos permite vivir plenamente y apreciar cada momento.",
       image: "./../../../assets/images/memento_mori.png"
+    },
+    {
+      frase: "El que tiene un porqué para vivir puede soportar casi cualquier cómo.",
+      autor: "NIETZSCHE",
+      explicacion: "Tener un propósito profundo en la vida nos da fuerza para enfrentar los desafíos y encontrar significado en nuestras experiencias.",
+      image: "./../../../assets/images/acompañado.avif"
     }
   ];
   constructor() { }
