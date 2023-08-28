@@ -34,7 +34,7 @@ export class FrasesPage implements OnInit {
     });
   }
 
-  cargarJSON() {
+  private cargarJSON() {
     this.frases = jsonFile.frases.map((frase: any) => {
       const descFrase = frase.frase;
       const autor = frase.autor;
