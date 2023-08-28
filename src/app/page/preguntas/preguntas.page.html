@@ -19,6 +19,16 @@
     <ion-button fill="clear" (click)="validarRespuesta(2)">Opción B</ion-button>
     <ion-button fill="clear" (click)="validarRespuesta(3)">Opción C</ion-button>
   </ion-card><br><br>
+  <ion-list *ngIf="mostrarResultado">
+    <ion-item *ngIf="respuestaCorrecta">
+      <ion-label>{{ pregunta.explicacion }}</ion-label>
+      <ion-badge color="success">¡Correcto!</ion-badge>
+    </ion-item>
+    <ion-item *ngIf="!respuestaCorrecta">
+      <ion-label>{{ pregunta.explicacion }}</ion-label>
+      <ion-badge color="danger">¡Ups!</ion-badge>
+    </ion-item>
+  </ion-list>
   <div class="contanier-buttons"><div class="wrapper"><div (click)="siguientePregunta()" class="ion-activatable ripple-parent"><ion-icon name="play-outline"></ion-icon>&nbsp;&nbsp;Siguiente<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
 
 </ion-content>

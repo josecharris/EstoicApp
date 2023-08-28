@@ -3,14 +3,16 @@ export class Pregunta{
     public primeraOpcion: string = "";
     public segundaOpcion: string = "";
     public terceraOpcion: string = "";
+    public explicacion: string = "";
     public respuestaCorrecta: number = 0;
     
     constructor(descripcion: string, primeraOpcion: string, segundaOpcion: string, terceraOpcion: string,
-        respuestaCorrecta: number){
+        explicacion:string, respuestaCorrecta: number){
         this.descripcion = descripcion;
         this.primeraOpcion = primeraOpcion;
         this.segundaOpcion = segundaOpcion;
         this.terceraOpcion = terceraOpcion;
         this.respuestaCorrecta = respuestaCorrecta;
+        this.explicacion = explicacion;
     }
 }

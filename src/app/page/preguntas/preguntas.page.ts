@@ -8,19 +8,21 @@ import { Pregunta } from 'src/app/dto/pregunta.dto';
 })
 export class PreguntasPage implements OnInit {
 
-  public pregunta: Pregunta = new Pregunta("", "", "", "", 2);
+  public pregunta: Pregunta = new Pregunta("", "", "", "", "", 2);
   public preguntas: Pregunta[] = [];
   private indice: number = -1;
+  public mostrarResultado: boolean = false;
+  public respuestaCorrecta: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
     /* Cargue */
-    this.preguntas.push(new Pregunta("Descripcion", "Opcion 1", "Opcion 2", "Opcion 3", 2));
-    this.preguntas.push(new Pregunta("Descripcion 2", "Opcion 1", "Opcion 2", "Opcion 3", 2));
-    this.preguntas.push(new Pregunta("Descripcion 3", "Opcion 1", "Opcion 2", "Opcion 3", 2));
-    this.preguntas.push(new Pregunta("Descripcion 4", "Opcion 1", "Opcion 2", "Opcion 3", 2));
-    this.preguntas.push(new Pregunta("Descripcion 5", "Opcion 1", "Opcion 2", "Opcion 3", 2));
+    this.preguntas.push(new Pregunta("Descripcion", "Opcion 1", "Opcion 2", "Opcion 3", "Explicacion 1", 2));
+    this.preguntas.push(new Pregunta("Descripcion 2", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 2", 2));
+    this.preguntas.push(new Pregunta("Descripcion 3", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 3", 2));
+    this.preguntas.push(new Pregunta("Descripcion 4", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 4", 2));
+    this.preguntas.push(new Pregunta("Descripcion 5", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 5", 2));
 
     this.preguntas = this.ordenarListaAleatorio(this.preguntas);
     /* Seleccionar pregunta */
@@ -34,7 +36,13 @@ export class PreguntasPage implements OnInit {
   }
 
   public validarRespuesta(opcionSeleccionada: number){
-    
+    if(this.pregunta.respuestaCorrecta === opcionSeleccionada){
+      this.mostrarResultado = true;
+      this.respuestaCorrecta = true;
+    }else{
+      this.mostrarResultado = true;
+      this.respuestaCorrecta = false;
+    }
   }
 
   /** Algoritmo de Fisher-Yates */
@@ -54,6 +62,8 @@ export class PreguntasPage implements OnInit {
       index = this.getRandomInt(0, this.preguntas.length);
     }
     this.pregunta = this.preguntas[index];
+    this.mostrarResultado = false;
+    this.respuestaCorrecta = false;
   }
 
 }
