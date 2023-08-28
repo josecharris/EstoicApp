@@ -4,6 +4,7 @@ export class Pregunta{
     public segundaOpcion: string = "";
     public terceraOpcion: string = "";
     public respuestaCorrecta: number = 0;
+    
     constructor(descripcion: string, primeraOpcion: string, segundaOpcion: string, terceraOpcion: string,
         respuestaCorrecta: number){
         this.descripcion = descripcion;
