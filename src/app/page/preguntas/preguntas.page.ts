@@ -18,9 +18,15 @@ export class PreguntasPage implements OnInit {
     this.preguntas.push(new Pregunta("Descripcion", "Opcion 1", "Opcion 2", "Opcion 3", 2));
     this.preguntas.push(new Pregunta("Descripcion 2", "Opcion 1", "Opcion 2", "Opcion 3", 2));
     this.preguntas.push(new Pregunta("Descripcion 3", "Opcion 1", "Opcion 2", "Opcion 3", 2));
+    this.preguntas.push(new Pregunta("Descripcion 4", "Opcion 1", "Opcion 2", "Opcion 3", 2));
+    this.preguntas.push(new Pregunta("Descripcion 5", "Opcion 1", "Opcion 2", "Opcion 3", 2));
     /* Seleccionar pregunta */
-    const index = Math.floor(Math.random() * this.preguntas.length);
+    const index = this.getRandomInt(0, this.preguntas.length + 1)
     this.pregunta = this.preguntas[index];
+  }
+
+  private getRandomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   public validarRespuesta(opcionSeleccionada: number){
