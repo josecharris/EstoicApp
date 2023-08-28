@@ -23,6 +23,7 @@ export class FrasesPage implements OnInit {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
+        this.frases = [];
         this.cargarJSON();
         this.frases = this.ordenarListaAleatorio(this.frases);
       });
