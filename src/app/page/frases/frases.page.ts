@@ -45,7 +45,7 @@ export class FrasesPage implements OnInit {
     });
   }
 
-  cargarImagenes(){
+  private cargarImagenes(): void{
     this.imagenes.push("acompañado.avif");
     this.imagenes.push("color.avif");
     this.imagenes.push("escultura.jpg");
