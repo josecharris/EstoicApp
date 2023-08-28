@@ -5,19 +5,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <ion-card *ngFor="let pregunta of preguntas; let i = index">
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Pregunta {{ i + 1 }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less<br><br>
-      <p>A. Opción a AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaa</p><br>
-      <p>B. Opción b BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p><br>
-      <p>C. Opción c CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc</p><br>
+      <p>{{ pregunta.descripcion }}</p><br><br>
+      <p>A. {{ pregunta.primeraOpcion }}</p><br>
+      <p>B. {{ pregunta.segundaOpcion }}</p><br>
+      <p>C. {{ pregunta.terceraOpcion }}</p><br>
     </ion-card-content>
-    <ion-button fill="clear" (click)="validarRespuesta(1)">Opción A</ion-button>
-    <ion-button fill="clear" (click)="validarRespuesta(2)">Opción B</ion-button>
-    <ion-button fill="clear" (click)="validarRespuesta(3)">Opción C</ion-button>
+    <ion-button fill="clear" (click)="validarRespuesta(pregunta.respuestaCorrecta, 1)">Opción A</ion-button>
+    <ion-button fill="clear" (click)="validarRespuesta(pregunta.respuestaCorrecta, 2)">Opción B</ion-button>
+    <ion-button fill="clear" (click)="validarRespuesta(pregunta.respuestaCorrecta, 3)">Opción C</ion-button>
   </ion-card>
 </ion-content>
