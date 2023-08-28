@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/* Cambia el color del icono "home" a dorado */
+ion-title[id="titulo"] {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    text-align: center;
+}
+
+#descripcion{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+#descripcion p {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  line-height: 26px;
+  color: #D4AF37;
+  margin: 0;
+}
