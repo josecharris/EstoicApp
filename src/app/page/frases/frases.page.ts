@@ -18,6 +18,8 @@ export class FrasesPage implements OnInit {
   public asset: string = "./../../../assets/images/";
   public imagenes: string[] = [];
 
+  public frase: Frase = new Frase("", "", "", "");
+
   constructor( private router: Router ) {
     this.cargarImagenes();
     this.router.events
@@ -26,6 +28,8 @@ export class FrasesPage implements OnInit {
         this.frases = [];
         this.cargarJSON();
         this.frases = this.ordenarListaAleatorio(this.frases);
+        const index = this.getRandomInt(0, this.frases.length + 1);
+        this.frase = this.frases[index];
       });
   }
 
@@ -33,6 +37,10 @@ export class FrasesPage implements OnInit {
     const mySwiper = new Swiper('.swiper-container', {
       direction: 'vertical',
     });
+  }
+
+  private getRandomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   private cargarJSON() {
@@ -69,6 +77,11 @@ export class FrasesPage implements OnInit {
         [listaModificada[i], listaModificada[j]] = [listaModificada[j], listaModificada[i]];
     }
     return listaModificada;
-}
+  }
+
+  public siguienteFrase(){
+    const index = Math.floor(Math.random() * this.frases.length);
+    this.frase = this.frases[index];
+  }
 
 }

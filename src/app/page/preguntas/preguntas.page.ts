@@ -20,8 +20,10 @@ export class PreguntasPage implements OnInit {
     this.preguntas.push(new Pregunta("Descripcion 3", "Opcion 1", "Opcion 2", "Opcion 3", 2));
     this.preguntas.push(new Pregunta("Descripcion 4", "Opcion 1", "Opcion 2", "Opcion 3", 2));
     this.preguntas.push(new Pregunta("Descripcion 5", "Opcion 1", "Opcion 2", "Opcion 3", 2));
+
+    this.preguntas = this.ordenarListaAleatorio(this.preguntas);
     /* Seleccionar pregunta */
-    const index = this.getRandomInt(0, this.preguntas.length + 1)
+    const index = this.getRandomInt(0, this.preguntas.length + 1);
     this.pregunta = this.preguntas[index];
   }
 
@@ -31,6 +33,17 @@ export class PreguntasPage implements OnInit {
 
   public validarRespuesta(opcionSeleccionada: number){
     
+  }
+
+  /** Algoritmo de Fisher-Yates */
+  private ordenarListaAleatorio(array: Pregunta[]): Pregunta[] {
+    const listaModificada = array.slice(); // Copia del array original
+    for (let i = listaModificada.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        // Intercambiar elementos
+        [listaModificada[i], listaModificada[j]] = [listaModificada[j], listaModificada[i]];
+    }
+    return listaModificada;
   }
 
   public siguientePregunta(){
