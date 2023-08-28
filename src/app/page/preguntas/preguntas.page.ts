@@ -12,4 +12,8 @@ export class PreguntasPage implements OnInit {
   ngOnInit() {
   }
 
+  public validarRespuesta(opcionSeleccionada: number){
+    
+  }
+
 }
