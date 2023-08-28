@@ -28,7 +28,7 @@ export class FrasesPage implements OnInit {
         this.frases = [];
         this.cargarJSON();
         this.frases = this.ordenarListaAleatorio(this.frases);
-        const index = this.getRandomInt(0, this.frases.length + 1);
+        const index = this.getRandomInt(0, this.frases.length);
         this.indice = index;
         this.frase = this.frases[this.indice];
       });
@@ -83,10 +83,9 @@ export class FrasesPage implements OnInit {
   public siguienteFrase(){
     let index: number = this.indice;
     while(this.indice == index){
-      index = Math.floor(Math.random() * this.frases.length);
+      index = this.getRandomInt(0, this.frases.length);
     }
     this.frase = this.frases[index];
-    
   }
 
 }

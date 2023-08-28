@@ -10,6 +10,7 @@ export class PreguntasPage implements OnInit {
 
   public pregunta: Pregunta = new Pregunta("", "", "", "", 2);
   public preguntas: Pregunta[] = [];
+  private indice: number = -1;
 
   constructor() { }
 
@@ -23,8 +24,9 @@ export class PreguntasPage implements OnInit {
 
     this.preguntas = this.ordenarListaAleatorio(this.preguntas);
     /* Seleccionar pregunta */
-    const index = this.getRandomInt(0, this.preguntas.length + 1);
-    this.pregunta = this.preguntas[index];
+    const index = this.getRandomInt(0, this.preguntas.length);
+    this.indice = index;
+    this.pregunta = this.preguntas[this.indice];
   }
 
   private getRandomInt(min: number, max: number): number {
@@ -47,7 +49,10 @@ export class PreguntasPage implements OnInit {
   }
 
   public siguientePregunta(){
-    const index = Math.floor(Math.random() * this.preguntas.length);
+    let index: number = this.indice;
+    while(this.indice == index){
+      index = this.getRandomInt(0, this.preguntas.length);
+    }
     this.pregunta = this.preguntas[index];
   }
 
