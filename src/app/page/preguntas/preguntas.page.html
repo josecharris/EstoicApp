@@ -14,6 +14,7 @@
       <p>A. {{ pregunta.primeraOpcion }}</p><br>
       <p>B. {{ pregunta.segundaOpcion }}</p><br>
       <p>C. {{ pregunta.terceraOpcion }}</p><br>
+      <p *ngIf="mostrarResultado"><strong>Explicación:</strong><br>{{ pregunta.explicacion }}</p>
     </ion-card-content>
     <ion-button fill="clear" (click)="validarRespuesta(1)">Opción A</ion-button>
     <ion-button fill="clear" (click)="validarRespuesta(2)">Opción B</ion-button>
@@ -21,11 +22,11 @@
   </ion-card><br><br>
   <ion-list *ngIf="mostrarResultado">
     <ion-item *ngIf="respuestaCorrecta">
-      <ion-label>{{ pregunta.explicacion }}</ion-label>
+      <ion-label>¡Correcto!</ion-label>
       <ion-badge color="success">¡Correcto!</ion-badge>
     </ion-item>
     <ion-item *ngIf="!respuestaCorrecta">
-      <ion-label>{{ pregunta.explicacion }}</ion-label>
+      <ion-label>¡Es tu oportunidad de aprender!</ion-label>
       <ion-badge color="danger">¡Ups!</ion-badge>
     </ion-item>
   </ion-list>
