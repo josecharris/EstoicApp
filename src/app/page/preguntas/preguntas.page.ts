@@ -36,13 +36,15 @@ export class PreguntasPage implements OnInit {
   }
 
   public validarRespuesta(opcionSeleccionada: number){
-    if(this.pregunta.respuestaCorrecta === opcionSeleccionada){
-      this.mostrarResultado = true;
-      this.respuestaCorrecta = true;
-    }else{
-      this.mostrarResultado = true;
-      this.respuestaCorrecta = false;
-    }
+    if(this.mostrarResultado === false){
+      if(this.pregunta.respuestaCorrecta === opcionSeleccionada){
+        this.mostrarResultado = true;
+        this.respuestaCorrecta = true;
+      }else{
+        this.mostrarResultado = true;
+        this.respuestaCorrecta = false;
+      }
+    } 
   }
 
   /** Algoritmo de Fisher-Yates */
