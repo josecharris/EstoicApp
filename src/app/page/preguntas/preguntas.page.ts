@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregunta } from 'src/app/dto/pregunta.dto';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import jsonFile from  './../../../assets/files/json/preguntas.json';
+
 
 @Component({
   selector: 'app-preguntas',
@@ -14,22 +18,22 @@ export class PreguntasPage implements OnInit {
   public mostrarResultado: boolean = false;
   public respuestaCorrecta: boolean = false;
 
-  constructor() { }
-
-  ngOnInit() {
-    /* Cargue */
-    this.preguntas.push(new Pregunta("Descripcion", "Opcion 1", "Opcion 2", "Opcion 3", "Explicacion 1", 2));
-    this.preguntas.push(new Pregunta("Descripcion 2", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 2", 2));
-    this.preguntas.push(new Pregunta("Descripcion 3", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 3", 2));
-    this.preguntas.push(new Pregunta("Descripcion 4", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 4", 2));
-    this.preguntas.push(new Pregunta("Descripcion 5", "Opcion 1", "Opcion 2", "Opcion 3", "Explicación 5", 2));
-
-    this.preguntas = this.ordenarListaAleatorio(this.preguntas);
-    /* Seleccionar pregunta */
-    const index = this.getRandomInt(0, this.preguntas.length);
-    this.indice = index;
-    this.pregunta = this.preguntas[this.indice];
+  constructor( private router: Router ) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.preguntas = [];
+        this.cargarJSON();
+        this.preguntas = this.ordenarListaAleatorio( this.preguntas );
+        this.preguntas = this.ordenarListaAleatorio(this.preguntas);
+        /* Seleccionar pregunta */
+        const index = this.getRandomInt(0, this.preguntas.length);
+        this.indice = index;
+        this.pregunta = this.preguntas[this.indice];
+      });
   }
+
+  ngOnInit() { }
 
   private getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -66,6 +70,18 @@ export class PreguntasPage implements OnInit {
     this.pregunta = this.preguntas[index];
     this.mostrarResultado = false;
     this.respuestaCorrecta = false;
+  }
+
+  private cargarJSON() {
+    this.preguntas = jsonFile.preguntas.map((pregunta: any) => {
+      const descripcion = pregunta.frase;
+      const primeraOpcion = pregunta.primeraOpcion;
+      const segundaOpcion = pregunta.segundaOpcion;
+      const terceraOpcion = pregunta.terceraOpcion;
+      const explicacion = pregunta.explicacion;
+      const respuestaCorrecta = pregunta.respuestaCorrecta;
+      return new Pregunta( descripcion, primeraOpcion, segundaOpcion, terceraOpcion, explicacion, respuestaCorrecta );
+    });
   }
 
 }
