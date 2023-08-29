@@ -22,11 +22,11 @@
   </ion-card><br><br>
   <ion-list *ngIf="mostrarResultado">
     <ion-item *ngIf="respuestaCorrecta">
-      <ion-label>¡Correcto!</ion-label>
+      <ion-label><strong>¡Correcto!</strong></ion-label>
       <ion-badge color="success">¡Correcto!</ion-badge>
     </ion-item>
     <ion-item *ngIf="!respuestaCorrecta">
-      <ion-label>¡Es tu oportunidad de aprender!</ion-label>
+      <ion-label><strong>¡Es tu oportunidad de aprender!</strong></ion-label>
       <ion-badge color="danger">¡Ups!</ion-badge>
     </ion-item>
   </ion-list>
