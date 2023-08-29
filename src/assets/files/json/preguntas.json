@@ -1,3 +1,165 @@
 {
-    "preguntas": []
-}
+    "preguntas": [
+      {
+        "descripcion": "¿Qué es el 'logos' en el contexto del estoicismo?",
+        "primeraOpcion": "Una práctica de meditación profunda",
+        "segundaOpcion": "Una fuerza universal y racional que rige el mundo",
+        "terceraOpcion": "El estudio de los dioses antiguos",
+        "explicacion": "El 'logos' en el estoicismo se refiere a la idea de una razón divina o una ley natural que ordena y gobierna el universo.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "¿Qué es el 'apatheia' en el estoicismo?",
+        "primeraOpcion": "La tranquilidad emocional y la serenidad",
+        "segundaOpcion": "La indiferencia completa hacia todo",
+        "terceraOpcion": "Emociones extremadamente intensas",
+        "explicacion": "El 'apatheia' en el estoicismo se refiere a la tranquilidad emocional y la serenidad.",
+        "respuestaCorrecta": 1
+      },
+      {
+        "descripcion": "Según el estoicismo, ¿dónde reside la verdadera felicidad?",
+        "primeraOpcion": "En la búsqueda de placeres sensoriales",
+        "segundaOpcion": "En la consecución de deseos materiales",
+        "terceraOpcion": "En vivir virtuosamente de acuerdo con la razón",
+        "explicacion": "El estoicismo sostiene que la verdadera felicidad se encuentra en vivir virtuosamente de acuerdo con la razón.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "¿Qué es el 'cosmos' según los estoicos?",
+        "primeraOpcion": "El estudio de los seres vivos",
+        "segundaOpcion": "El orden y la armonía del universo",
+        "terceraOpcion": "Un estado de éxtasis espiritual profundo",
+        "explicacion": "El 'cosmos' en el estoicismo se refiere al orden y la armonía intrínseca del universo, que refleja la inteligencia divina y el 'logos'.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "¿Cuál es la actitud adecuada hacia las cosas que están fuera de nuestro control, según el estoicismo?",
+        "primeraOpcion": "Preocupación constante",
+        "segundaOpcion": "Apego emocional",
+        "terceraOpcion": "Aceptación serena",
+        "explicacion": "El estoicismo enfatiza la importancia de aceptar serenamente las cosas que no podemos controlar en lugar de preocuparnos constantemente o tener un apego emocional excesivo hacia ellas.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "En el estoicismo, la 'virtud' se refiere a:",
+        "primeraOpcion": "La búsqueda de placeres materiales",
+        "segundaOpcion": "Un comportamiento moralmente excelso y virtuoso",
+        "terceraOpcion": "Un estado de éxtasis espiritual",
+        "explicacion": "La 'virtud' en el estoicismo se refiere a vivir de manera ética y moralmente virtuosa, en armonía con la razón y la naturaleza.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "¿Qué significa la frase estoica 'Amor fati'?",
+        "primeraOpcion": "Amor por la fama",
+        "segundaOpcion": "Amor por la virtud",
+        "terceraOpcion": "Amor por el destino",
+        "explicacion": "\"Amor fati\" es una expresión estoica que significa amar y aceptar el destino tal como es, abrazando incluso los aspectos difíciles de la vida.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "La enseñanza estoica de 'vivir de acuerdo con la naturaleza' se refiere a:",
+        "primeraOpcion": "Vivir en armonía con la razón y la virtud",
+        "segundaOpcion": "Adaptarse a las normas sociales cambiantes",
+        "terceraOpcion": "Seguir los impulsos y deseos naturales sin restricciones",
+        "explicacion": "\"Vivir de acuerdo con la naturaleza\" en el estoicismo se refiere a vivir en conformidad con la razón, la virtud y el orden cósmico, en lugar de seguir impulsos naturales sin restricciones.",
+        "respuestaCorrecta": 1
+      },
+      {
+        "descripcion": "En el estoicismo, el término 'eudaimonía' se refiere a:",
+        "primeraOpcion": "La búsqueda de placeres hedonistas",
+        "segundaOpcion": "Un estado de completa indiferencia",
+        "terceraOpcion": "La búsqueda de la felicidad a través de la virtud y el cumplimiento del deber",
+        "explicacion": "\"La 'eudaimonía' en el estoicismo se refiere a la felicidad basada en la virtud y el desarrollo personal, en lugar de la búsqueda de placeres hedonistas.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "En el estoicismo, la 'imperturbabilidad' se refiere a:",
+        "primeraOpcion": "La falta de emociones humanas",
+        "segundaOpcion": "Mantener la calma y la serenidad en medio de las dificultades",
+        "terceraOpcion": "Experimentar una alegría constante e intensa",
+        "explicacion": "\"La 'imperturbabilidad' en el estoicismo se refiere a mantener una actitud tranquila y serena en todas las circunstancias.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "Según el estoicismo, ¿cuál es el factor principal que está bajo nuestro control y afecta nuestra felicidad?",
+        "primeraOpcion": "Los acontecimientos externos.",
+        "segundaOpcion": "Nuestras propias opiniones y acciones.",
+        "terceraOpcion": "El destino predestinado.",
+        "explicacion": "Los estoicos creían firmemente en la idea de que las únicas cosas que están verdaderamente bajo nuestro control son nuestras propias opiniones, decisiones y acciones. Los eventos externos y el destino están fuera de nuestro control y, por lo tanto, no deberíamos aferrarnos emocionalmente a ellos. Enfocarse en nuestras respuestas internas nos permite mantener la serenidad y la virtud.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "¿Qué virtud estoica se refiere a actuar con moderación y evitar los extremos?",
+        "primeraOpcion": "Valentía.",
+        "segundaOpcion": "Sabiduría.",
+        "terceraOpcion": "Templanza.",
+        "explicacion": "La templanza es una virtud estoica que implica la moderación y el autocontrol en todas las áreas de la vida. Los estoicos creían que evitar los extremos y mantener un equilibrio en las emociones y las acciones era esencial para alcanzar la sabiduría y la virtud.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "¿Cuál es el objetivo principal propuesto por el estoicismo para alcanzar la tranquilidad mental y la felicidad?",
+        "primeraOpcion": "Vivir de acuerdo con la naturaleza y la virtud.",
+        "segundaOpcion": "Desapegarse por completo de las emociones.",
+        "terceraOpcion": "Maximizar el placer y minimizar el dolor.",
+        "explicacion": "Los estoicos consideraban que vivir en armonía con la naturaleza y cultivar la virtud era el camino hacia la tranquilidad y la felicidad duraderas. Buscar placer y evitar el dolor no era su enfoque principal, ya que creían que tales deseos eran pasajeros y podían conducir a la insatisfacción.",
+        "respuestaCorrecta": 1
+      },
+      {
+        "descripcion": "Según el estoicismo, ¿cómo deberíamos enfrentar las adversidades y los desafíos de la vida?",
+        "primeraOpcion": "Evitarlos siempre que sea posible.",
+        "segundaOpcion": "Afrontarlos con coraje y aceptación serena.",
+        "terceraOpcion": "Afrontarlos con desesperación y enojo.",
+        "explicacion": "Los estoicos abogaban por afrontar las adversidades y desafíos con coraje y aceptación tranquila. Creían que lamentarse o enojarse por situaciones difíciles solo aumentaba el sufrimiento, mientras que mantener la calma y enfrentarlos con serenidad permitía encontrar soluciones efectivas.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "¿Cómo veían los estoicos la relación entre el mundo material y las emociones humanas?",
+        "primeraOpcion": "Las emociones humanas son el resultado de las valoraciones internas de las cosas del mundo material.",
+        "segundaOpcion": "El mundo material es la única fuente de felicidad y tristeza.",
+        "terceraOpcion": "Las emociones humanas son controladas por los dioses.",
+        "explicacion": "Los estoicos sostenían que las emociones humanas no eran directamente causadas por eventos externos, sino por nuestras interpretaciones y valoraciones internas de esos eventos. Creían que podíamos ejercer control sobre cómo reaccionamos emocionalmente al mundo a través de nuestras percepciones y juicios internos.",
+        "respuestaCorrecta": 1
+      },
+      {
+        "descripcion": "¿Cuál es la principal enseñanza del estoicismo en relación con el deseo y la aversión?",
+        "primeraOpcion": "Debemos reprimir todos los deseos y aversiones.",
+        "segundaOpcion": "Debemos buscar el placer en todo momento.",
+        "terceraOpcion": "Debemos aprender a controlar nuestros deseos y aversiones.",
+        "explicacion": "Los estoicos creían que desear cosas externas y aversiones intensas eran fuentes de perturbación emocional. Abogaban por controlar y dirigir estos impulsos hacia cosas dentro de nuestro control, como nuestras opiniones y acciones.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "Según el estoicismo, ¿cuál es la relación entre la virtud y la felicidad?",
+        "primeraOpcion": "La virtud y la felicidad son inalcanzables para los seres humanos.",
+        "segundaOpcion": "La virtud y la felicidad son lo mismo y se alcanzan automáticamente juntas.",
+        "terceraOpcion": "La virtud es el único camino hacia la felicidad duradera.",
+        "explicacion": "Los estoicos sostenían que la virtud era la única verdadera fuente de felicidad y que alcanzarla requería vivir de acuerdo con la razón y la moral en lugar de perseguir placeres momentáneos.",
+        "respuestaCorrecta": 3
+      },
+      {
+        "descripcion": "¿Qué recomendaban los estoicos en relación con las opiniones y creencias de los demás?",
+        "primeraOpcion": "Evaluar críticamente las opiniones de los demás y aceptar solo aquellas que sean racionales y útiles.",
+        "segundaOpcion": "Adoptar ciegamente las opiniones de los demás para evitar conflictos.",
+        "terceraOpcion": "Ignorar por completo las opiniones de los demás.",
+        "explicacion": "Los estoicos promovían la idea de utilizar la razón para discernir entre opiniones válidas y falaces. No abogaban por el rechazo total de las opiniones de los demás, pero sí recomendaban analizar y aceptar solo aquellas que fueran coherentes con la sabiduría y la virtud.",
+        "respuestaCorrecta": 1
+      },
+      {
+        "descripcion": "¿Cómo veían los estoicos la relación entre la tranquilidad interior y los deseos materiales?",
+        "primeraOpcion": "La tranquilidad interior depende exclusivamente de la satisfacción de todos los deseos materiales.",
+        "segundaOpcion": "La tranquilidad interior es independiente de los deseos materiales y se logra a través del control interno.",
+        "terceraOpcion": "La tranquilidad interior solo es posible si se renuncian todos los deseos materiales.",
+        "explicacion": "Los estoicos creían que la tranquilidad interior provenía de la virtud y el autocontrol, no de la acumulación de bienes materiales. Enfocarse en lo que está dentro de nuestro control (nuestras acciones y actitudes) en lugar de deseos externos era fundamental para la serenidad.",
+        "respuestaCorrecta": 2
+      },
+      {
+        "descripcion": "¿Cuál es la postura estoica en relación con el sufrimiento y el dolor?",
+        "primeraOpcion": "El sufrimiento y el dolor son inevitablemente destructivos para el bienestar humano.",
+        "segundaOpcion": "El sufrimiento y el dolor son ilusiones que podemos evitar con la suficiente voluntad.",
+        "terceraOpcion": "El sufrimiento y el dolor son oportunidades para cultivar la fortaleza y la virtud.",
+        "explicacion": "Los estoicos creían que el sufrimiento y el dolor eran inevitables en la vida, pero también eran oportunidades para ejercitar la fortaleza, la paciencia y la virtud. En lugar de buscar evitarlos a toda costa, abrazarlos con resiliencia y aprender de ellos era esencial para el crecimiento personal.",
+        "respuestaCorrecta": 3
+      }
+    ]
+  }
+  
