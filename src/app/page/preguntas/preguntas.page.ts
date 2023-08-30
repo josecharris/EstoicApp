@@ -74,7 +74,7 @@ export class PreguntasPage implements OnInit {
 
   private cargarJSON() {
     this.preguntas = jsonFile.preguntas.map((pregunta: any) => {
-      const descripcion = pregunta.frase;
+      const descripcion = pregunta.descripcion;
       const primeraOpcion = pregunta.primeraOpcion;
       const segundaOpcion = pregunta.segundaOpcion;
       const terceraOpcion = pregunta.terceraOpcion;
