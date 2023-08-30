@@ -12,6 +12,7 @@ export class AudiolibroPage implements OnInit {
   public mostrarMeditaciones: boolean = false;
   public mostrarManual: boolean = false;
   public mostrarLecciones: boolean = false;
+  public mostrarEpistolaLucilio1: boolean = false;
   public mostrarBotones: boolean = true;
   constructor() { }
 
@@ -27,6 +28,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarManual = false;
         this.mostrarBotones = false;
         this.mostrarLecciones = false;
+        this.mostrarEpistolaLucilio1 = false;
         this.titulo = "Meditaciones";
       }
       if(numeroLibro === 2){
@@ -35,6 +37,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarManual = true;
         this.mostrarBotones = false;
         this.mostrarLecciones = false;
+        this.mostrarEpistolaLucilio1 = false;
         this.titulo = "Manual de Epicteto";
       }
       if(numeroLibro === 3){
@@ -43,8 +46,19 @@ export class AudiolibroPage implements OnInit {
         this.mostrarManual = false;
         this.mostrarBotones = false;
         this.mostrarLecciones = true;
+        this.mostrarEpistolaLucilio1 = false;
         this.titulo = "Lecciones de estoicismo";
       }
+      if(numeroLibro === 4){
+        this.mostrarReproductor = true;
+        this.mostrarMeditaciones = false;
+        this.mostrarManual = false;
+        this.mostrarBotones = false;
+        this.mostrarLecciones = false;
+        this.mostrarEpistolaLucilio1 = true;
+        this.titulo = "Epistolas morales a Lucilio";
+      }
+      
     } else {
       this.mostrarMsjCon = true;
       this.mostrarReproductor = false;
