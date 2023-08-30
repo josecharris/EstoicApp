@@ -55,6 +55,10 @@ const routes: Routes = [
       {
         path: 'preguntas',
         loadChildren: () => import('./../preguntas/preguntas.module').then( m => m.PreguntasPageModule)
+      },
+      {
+        path: 'audiolibro',
+        loadChildren: () => import('./../audiolibro/audiolibro.module').then( m => m.AudiolibroPageModule)
       }
     ]
   }
