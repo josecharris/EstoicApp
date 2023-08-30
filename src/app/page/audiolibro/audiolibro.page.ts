@@ -18,6 +18,7 @@ export class AudiolibroPage implements OnInit {
   public mostrarEpistolaLucilio4: boolean = false;
   public mostrarEpistolaLucilio5: boolean = false;
   public mostrarEpistolaLucilio6: boolean = false;
+  public mostrarSobreBrevedad: boolean = false;
   public mostrarBotones: boolean = true;
   constructor() { }
 
@@ -39,6 +40,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Meditaciones";
       }
       if(numeroLibro === 2){
@@ -53,6 +55,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Manual de Epicteto";
       }
       if(numeroLibro === 3){
@@ -67,6 +70,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Lecciones de estoicismo";
       }
       if(numeroLibro === 4){
@@ -81,6 +85,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Epistolas morales a Lucilio";
       }
       if(numeroLibro === 5){
@@ -95,6 +100,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Epistolas morales a Lucilio";
       }
       if(numeroLibro === 6){
@@ -109,6 +115,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Epistolas morales a Lucilio";
       }
       if(numeroLibro === 7){
@@ -123,6 +130,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = true;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Epistolas morales a Lucilio";
       }
       if(numeroLibro === 8){
@@ -137,6 +145,7 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = true;
         this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Epistolas morales a Lucilio";
       }
       if(numeroLibro === 9){
@@ -151,7 +160,23 @@ export class AudiolibroPage implements OnInit {
         this.mostrarEpistolaLucilio4 = false;
         this.mostrarEpistolaLucilio5 = false;
         this.mostrarEpistolaLucilio6 = true;
+        this.mostrarSobreBrevedad = false;
         this.titulo = "Epistolas morales a Lucilio";
+      }
+      if(numeroLibro === 10){
+        this.mostrarReproductor = true;
+        this.mostrarMeditaciones = false;
+        this.mostrarManual = false;
+        this.mostrarBotones = false;
+        this.mostrarLecciones = false;
+        this.mostrarEpistolaLucilio1 = false;
+        this.mostrarEpistolaLucilio2 = false;
+        this.mostrarEpistolaLucilio3 = false;
+        this.mostrarEpistolaLucilio4 = false;
+        this.mostrarEpistolaLucilio5 = false;
+        this.mostrarEpistolaLucilio6 = false;
+        this.mostrarSobreBrevedad = true;
+        this.titulo = "Sobre la brevedad de la vida";
       }
     } else {
       this.mostrarMsjCon = true;
