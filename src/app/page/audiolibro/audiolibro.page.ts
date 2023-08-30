@@ -10,6 +10,7 @@ export class AudiolibroPage implements OnInit {
   public mostrarMsjCon: boolean = false;
   public mostrarReproductor: boolean = false;
   public mostrarMeditaciones: boolean = false;
+  public mostrarManual: boolean = false;
   public mostrarBotones: boolean = true;
   constructor() { }
 
@@ -22,8 +23,16 @@ export class AudiolibroPage implements OnInit {
       if(numeroLibro === 1){
         this.mostrarReproductor = true;
         this.mostrarMeditaciones = true;
+        this.mostrarManual = false;
         this.mostrarBotones = false;
         this.titulo = "Meditaciones";
+      }
+      if(numeroLibro === 2){
+        this.mostrarReproductor = true;
+        this.mostrarMeditaciones = false;
+        this.mostrarManual = true;
+        this.mostrarBotones = false;
+        this.titulo = "Manual de Epicteto";
       }
     } else {
       this.mostrarMsjCon = true;
@@ -36,6 +45,7 @@ export class AudiolibroPage implements OnInit {
     this.mostrarBotones = true;
     this.mostrarReproductor = false;
     this.mostrarMeditaciones = false;
+    this.mostrarManual = false;
   }
 
 }
