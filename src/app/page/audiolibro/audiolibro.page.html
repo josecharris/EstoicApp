@@ -5,12 +5,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngIf="mostrarMeditaciones">
+  <ion-card *ngIf="mostrarReproductor">
     <ion-card-header>
-      <ion-card-title style="font-size: 20px;">Meditaciones</ion-card-title>
+      <ion-card-title style="font-size: 20px;">{{ titulo }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/9A5m4OiF6jE?si=eFI5FTj5FXUKqogG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe *ngIf="mostrarMeditaciones" width="100%" height="315" src="https://www.youtube.com/embed/9A5m4OiF6jE?si=eFI5FTj5FXUKqogG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </ion-card-content>
     <ion-button fill="clear" (click)="volverBotones()">
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
