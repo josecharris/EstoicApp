@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AudiolibroPage implements OnInit {
   public titulo: string = "";
+  public mostrarMsjCon: boolean = false;
   public mostrarReproductor: boolean = false;
   public mostrarMeditaciones: boolean = false;
   public mostrarBotones: boolean = true;
@@ -16,11 +17,18 @@ export class AudiolibroPage implements OnInit {
   }
 
   public mostrarAudioLibro(numeroLibro: number): void{
-    if(numeroLibro === 1){
-      this.mostrarReproductor = true;
-      this.mostrarMeditaciones = true;
+    if (navigator.onLine) {
+      this.mostrarMsjCon = false;
+      if(numeroLibro === 1){
+        this.mostrarReproductor = true;
+        this.mostrarMeditaciones = true;
+        this.mostrarBotones = false;
+        this.titulo = "Meditaciones";
+      }
+    } else {
+      this.mostrarMsjCon = true;
+      this.mostrarReproductor = false;
       this.mostrarBotones = false;
-      this.titulo = "Meditaciones";
     }
   }
 
