@@ -1,0 +1,17 @@
+ion-title[id="titulo"] {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    text-align: center;
+}
+
+ion-button{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    --background: #121212;
+    --color: white;
+    height: 80px;
+}
+
+.container-buttons{
+    margin-top: 5%;
+}

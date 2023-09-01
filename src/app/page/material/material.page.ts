@@ -17,4 +17,8 @@ export class MaterialPage implements OnInit {
     this.router.navigate(['/tab-inicial/audiolibro']);
   }
 
+  public navegarReflexion(){
+    this.router.navigate(['/tab-inicial/reflexion']);
+  }
+
 }

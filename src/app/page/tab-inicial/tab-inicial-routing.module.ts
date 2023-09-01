@@ -63,6 +63,10 @@ const routes: Routes = [
       {
         path: 'material',
         loadChildren: () => import('./../material/material.module').then( m => m.MaterialPageModule)
+      },
+      {
+        path: 'reflexion',
+        loadChildren: () => import('./../reflexion/reflexion.module').then( m => m.ReflexionPageModule)
       }
     ]
   }
