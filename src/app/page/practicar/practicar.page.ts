@@ -18,7 +18,7 @@ export class PracticarPage implements OnInit {
   }
 
   public navegarAudioLibros(){
-    this.router.navigate(['/tab-inicial/audiolibro']);
+    this.router.navigate(['/tab-inicial/material']);
   }
 
 }
