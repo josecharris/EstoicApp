@@ -12,6 +12,7 @@ export class ReflexionPage implements OnInit {
   public mostrarBotones: boolean = true;
   public mostrarReproductor: boolean = false;
   public mostrarReglas: boolean = false;
+  public mostrarMandamientos: boolean = false;
   
   constructor() { }
 
@@ -23,7 +24,14 @@ export class ReflexionPage implements OnInit {
       if(numeroLibro == 1){
         this.mostrarReproductor = true;
         this.mostrarReglas = true;
-        this.titulo = "11 reglas del estoicismo";
+        this.mostrarMandamientos = false;
+        this.titulo = "Reglas del estoicismo";
+      }
+      if(numeroLibro == 2){
+        this.mostrarReproductor = true;
+        this.mostrarReglas = false;
+        this.mostrarMandamientos = true;
+        this.titulo = "Mandamientos del estoicismo";
       }
     }else{
       this.mostrarMsjCon = true;
