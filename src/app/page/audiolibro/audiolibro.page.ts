@@ -215,8 +215,6 @@ export class AudiolibroPage implements OnInit {
   public volverBotones(): void{
     this.mostrarBotones = true;
     this.mostrarReproductor = false;
-    this.mostrarMeditaciones = false;
-    this.mostrarManual = false;
   }
 
 }
