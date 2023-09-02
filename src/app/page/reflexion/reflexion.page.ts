@@ -13,6 +13,7 @@ export class ReflexionPage implements OnInit {
   public mostrarReproductor: boolean = false;
   public mostrarReglas: boolean = false;
   public mostrarMandamientos: boolean = false;
+  public frasesEmperador: boolean = false;
   
   constructor() { }
 
@@ -25,13 +26,22 @@ export class ReflexionPage implements OnInit {
         this.mostrarReproductor = true;
         this.mostrarReglas = true;
         this.mostrarMandamientos = false;
+        this.frasesEmperador = false;
         this.titulo = "Reglas del estoicismo";
       }
       if(numeroLibro == 2){
         this.mostrarReproductor = true;
         this.mostrarReglas = false;
         this.mostrarMandamientos = true;
+        this.frasesEmperador = false;
         this.titulo = "Mandamientos del estoicismo";
+      }
+      if(numeroLibro == 3){
+        this.mostrarReproductor = true;
+        this.mostrarReglas = false;
+        this.mostrarMandamientos = false;
+        this.frasesEmperador = true;
+        this.titulo = "Frases del emperador";
       }
     }else{
       this.mostrarMsjCon = true;
