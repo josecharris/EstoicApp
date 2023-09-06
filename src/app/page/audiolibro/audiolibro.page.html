@@ -13,9 +13,7 @@
   </ion-card>
 
   <ion-card *ngIf="mostrarReproductor">
-    <ion-card-header>
-      <ion-card-title class="color-amarillo" style="font-size: 20px;">{{ titulo }}</ion-card-title>
-    </ion-card-header>
+    <ion-card-header><ion-card-title class="color-amarillo" style="font-size: 20px;">{{ titulo }}</ion-card-title></ion-card-header>
     <ion-card-content>
       <iframe *ngIf="mostrarMeditaciones" width="100%" height="315" src="https://www.youtube.com/embed/9A5m4OiF6jE?si=eFI5FTj5FXUKqogG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <iframe *ngIf="mostrarManual" width="100%" height="315" src="https://www.youtube.com/embed/IY2aRnaaWH4?si=ME3sDClhWSAokXel" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
