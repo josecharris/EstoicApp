@@ -1,17 +1,11 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title id="titulo">Material</ion-title>
-  </ion-toolbar>
+  <ion-toolbar><ion-title id="titulo">Material</ion-title></ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-card *ngIf="mostrarMsjCon" class="color-amarillo">
-    <ion-card-header>
-      <ion-card-title class="color-amarillo">¡Error de conexión!</ion-card-title>
-    </ion-card-header>
+    <ion-card-header><ion-card-title class="color-amarillo">¡Error de conexión!</ion-card-title></ion-card-header>
     <ion-card-content>Para consumir este material es necesario estar conectado a internet. Revisa tu conexión y vuelve a intentarlo.</ion-card-content>
   </ion-card>
-
   <ion-card *ngIf="mostrarReproductor">
     <ion-card-header><ion-card-title class="color-amarillo" style="font-size: 20px;">{{ titulo }}</ion-card-title></ion-card-header>
     <ion-card-content>
