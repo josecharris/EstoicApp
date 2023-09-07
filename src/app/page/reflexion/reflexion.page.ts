@@ -17,6 +17,7 @@ export class ReflexionPage implements OnInit {
   public pilares: boolean = false;
   public consejos: boolean = false;
   public practica: boolean = false;
+  public vicios: boolean = false;
   
   constructor() { }
 
@@ -34,6 +35,7 @@ export class ReflexionPage implements OnInit {
         this.pilares = false;
         this.consejos = false;
         this.practica = false;
+        this.vicios = false;
         this.titulo = "Reglas del estoicismo";
       }
       if(numeroLibro == 2){
@@ -45,6 +47,7 @@ export class ReflexionPage implements OnInit {
         this.pilares = false;
         this.consejos = false;
         this.practica = false;
+        this.vicios = false;
         this.titulo = "Mandamientos del estoicismo";
       }
       if(numeroLibro == 3){
@@ -56,6 +59,7 @@ export class ReflexionPage implements OnInit {
         this.pilares = false;
         this.consejos = false;
         this.practica = false;
+        this.vicios = false;
         this.titulo = "Frases del emperador";
       }
       if(numeroLibro == 4){
@@ -67,6 +71,7 @@ export class ReflexionPage implements OnInit {
         this.pilares = true;
         this.consejos = false;
         this.practica = false;
+        this.vicios = false;
         this.titulo = "Pilares importantes";
       }
       if(numeroLibro == 5){
@@ -78,6 +83,7 @@ export class ReflexionPage implements OnInit {
         this.pilares = false;
         this.consejos = true;
         this.practica = false;
+        this.vicios = false;
         this.titulo = "Consejos para la vida";
       }
       if(numeroLibro == 6){
@@ -89,7 +95,20 @@ export class ReflexionPage implements OnInit {
         this.pilares = false;
         this.consejos = false;
         this.practica = true;
+        this.vicios = false;
         this.titulo = "Estoicismo moderno";
+      }
+      if(numeroLibro == 7){
+        this.mostrarBotones = false;
+        this.mostrarReproductor = true;
+        this.mostrarReglas = false;
+        this.mostrarMandamientos = false;
+        this.frasesEmperador = false;
+        this.pilares = false;
+        this.consejos = false;
+        this.practica = false;
+        this.vicios = true;
+        this.titulo = "Reflexión de los vicios";
       }
     }else{
       this.mostrarMsjCon = true;
