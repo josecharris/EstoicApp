@@ -1,43 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title id="titulo">Lecturas clásicas</ion-title>
-  </ion-toolbar>
+  <ion-toolbar><ion-title id="titulo">Lecturas clásicas</ion-title></ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <div id="descripcion">
-    <br><br>
-    <p>"Para vivir una buena vida, debes hablar con los muertos".</p><br>
+  <div id="descripcion"><br><br><p>"Para vivir una buena vida, debes hablar con los muertos".</p><br></div>
+  <div class="container-buttons">
+    <ion-button expand="block" (click)="navegarContenedorLectura(1)"><ion-icon name="book-outline"></ion-icon>1</ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(2)"><ion-icon name="book-outline"></ion-icon>2</ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(3)"><ion-icon name="book-outline"></ion-icon>3</ion-button>
   </div>
   <div class="container-buttons">
-    <ion-button expand="block" (click)="navegarContenedorLectura(1)">
-      <ion-icon name="book-outline"></ion-icon>1
-    </ion-button>
-    <ion-button expand="block" (click)="navegarContenedorLectura(2)">
-      <ion-icon name="book-outline"></ion-icon>2
-    </ion-button>
-    <ion-button expand="block" (click)="navegarContenedorLectura(3)">
-      <ion-icon name="book-outline"></ion-icon>3
-    </ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(4)"><ion-icon name="book-outline"></ion-icon>4</ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(5)"><ion-icon name="book-outline"></ion-icon>5</ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(6)"><ion-icon name="book-outline"></ion-icon>6</ion-button>
   </div>
   <div class="container-buttons">
-    <ion-button expand="block" (click)="navegarContenedorLectura(4)">
-      <ion-icon name="book-outline"></ion-icon>4
-    </ion-button>
-    <ion-button expand="block" (click)="navegarContenedorLectura(5)">
-      <ion-icon name="book-outline"></ion-icon>5
-    </ion-button>
-    <ion-button expand="block" (click)="navegarContenedorLectura(6)">
-      <ion-icon name="book-outline"></ion-icon>6
-    </ion-button>
-  </div>
-  <div class="container-buttons">
-    <ion-button expand="block" (click)="navegarContenedorLectura(7)">
-      <ion-icon name="book-outline"></ion-icon>7
-    </ion-button>
-    <ion-button expand="block" (click)="navegarContenedorLectura(8)">
-      <ion-icon name="book-outline"></ion-icon>8
-    </ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(7)"><ion-icon name="book-outline"></ion-icon>7</ion-button>
+    <ion-button expand="block" (click)="navegarContenedorLectura(8)"><ion-icon name="book-outline"></ion-icon>8</ion-button>
   </div>
   <div class="contanier-buttons"><div class="wrapper"><div (click)="volver()" class="ion-activatable ripple-parent">Volver<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
 </ion-content>
