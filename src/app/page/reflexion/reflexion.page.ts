@@ -16,6 +16,7 @@ export class ReflexionPage implements OnInit {
   public frasesEmperador: boolean = false;
   public pilares: boolean = false;
   public consejos: boolean = false;
+  public practica: boolean = false;
   
   constructor() { }
 
@@ -32,6 +33,7 @@ export class ReflexionPage implements OnInit {
         this.frasesEmperador = false;
         this.pilares = false;
         this.consejos = false;
+        this.practica = false;
         this.titulo = "Reglas del estoicismo";
       }
       if(numeroLibro == 2){
@@ -42,6 +44,7 @@ export class ReflexionPage implements OnInit {
         this.frasesEmperador = false;
         this.pilares = false;
         this.consejos = false;
+        this.practica = false;
         this.titulo = "Mandamientos del estoicismo";
       }
       if(numeroLibro == 3){
@@ -52,6 +55,7 @@ export class ReflexionPage implements OnInit {
         this.frasesEmperador = true;
         this.pilares = false;
         this.consejos = false;
+        this.practica = false;
         this.titulo = "Frases del emperador";
       }
       if(numeroLibro == 4){
@@ -62,6 +66,7 @@ export class ReflexionPage implements OnInit {
         this.frasesEmperador = false;
         this.pilares = true;
         this.consejos = false;
+        this.practica = false;
         this.titulo = "Pilares importantes";
       }
       if(numeroLibro == 5){
@@ -72,7 +77,19 @@ export class ReflexionPage implements OnInit {
         this.frasesEmperador = false;
         this.pilares = false;
         this.consejos = true;
+        this.practica = false;
         this.titulo = "Consejos para la vida";
+      }
+      if(numeroLibro == 6){
+        this.mostrarBotones = false;
+        this.mostrarReproductor = true;
+        this.mostrarReglas = false;
+        this.mostrarMandamientos = false;
+        this.frasesEmperador = false;
+        this.pilares = false;
+        this.consejos = false;
+        this.practica = true;
+        this.titulo = "Estoicismo moderno";
       }
     }else{
       this.mostrarMsjCon = true;
