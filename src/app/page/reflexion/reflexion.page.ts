@@ -14,6 +14,7 @@ export class ReflexionPage implements OnInit {
   public mostrarReglas: boolean = false;
   public mostrarMandamientos: boolean = false;
   public frasesEmperador: boolean = false;
+  public pilares: boolean = false;
   
   constructor() { }
 
@@ -23,25 +24,40 @@ export class ReflexionPage implements OnInit {
   public mostrarMaterial(numeroLibro: number): void{
     if (navigator.onLine) {
       if(numeroLibro == 1){
+        this.mostrarBotones = false;
         this.mostrarReproductor = true;
         this.mostrarReglas = true;
         this.mostrarMandamientos = false;
         this.frasesEmperador = false;
+        this.pilares = false;
         this.titulo = "Reglas del estoicismo";
       }
       if(numeroLibro == 2){
+        this.mostrarBotones = false;
         this.mostrarReproductor = true;
         this.mostrarReglas = false;
         this.mostrarMandamientos = true;
         this.frasesEmperador = false;
+        this.pilares = false;
         this.titulo = "Mandamientos del estoicismo";
       }
       if(numeroLibro == 3){
+        this.mostrarBotones = false;
         this.mostrarReproductor = true;
         this.mostrarReglas = false;
         this.mostrarMandamientos = false;
         this.frasesEmperador = true;
+        this.pilares = false;
         this.titulo = "Frases del emperador";
+      }
+      if(numeroLibro == 4){
+        this.mostrarBotones = false;
+        this.mostrarReproductor = true;
+        this.mostrarReglas = false;
+        this.mostrarMandamientos = false;
+        this.frasesEmperador = false;
+        this.pilares = true;
+        this.titulo = "Pilares importantes";
       }
     }else{
       this.mostrarMsjCon = true;
