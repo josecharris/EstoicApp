@@ -18,6 +18,7 @@ export class ReflexionPage implements OnInit {
   public consejos: boolean = false;
   public practica: boolean = false;
   public vicios: boolean = false;
+  public ejercicios: boolean = false;
   public calma: boolean = false;
   
   constructor() { }
@@ -38,6 +39,7 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = false;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Reglas del estoicismo";
       }
       if(numeroLibro == 2){
@@ -51,6 +53,7 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = false;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Mandamientos del estoicismo";
       }
       if(numeroLibro == 3){
@@ -64,6 +67,7 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = false;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Frases del emperador";
       }
       if(numeroLibro == 4){
@@ -77,6 +81,7 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = false;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Pilares importantes";
       }
       if(numeroLibro == 5){
@@ -90,6 +95,7 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = false;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Consejos para la vida";
       }
       if(numeroLibro == 6){
@@ -103,6 +109,7 @@ export class ReflexionPage implements OnInit {
         this.practica = true;
         this.vicios = false;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Estoicismo moderno";
       }
       if(numeroLibro == 7){
@@ -116,6 +123,7 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = true;
         this.calma = false;
+        this.ejercicios = false;
         this.titulo = "Reflexión de los vicios";
       }
       if(numeroLibro == 8){
@@ -129,7 +137,22 @@ export class ReflexionPage implements OnInit {
         this.practica = false;
         this.vicios = false;
         this.calma = true;
+        this.ejercicios = false;
         this.titulo = "Maneras de calmarte";
+      }
+      if(numeroLibro == 9){
+        this.mostrarBotones = false;
+        this.mostrarReproductor = true;
+        this.mostrarReglas = false;
+        this.mostrarMandamientos = false;
+        this.frasesEmperador = false;
+        this.pilares = false;
+        this.consejos = false;
+        this.practica = false;
+        this.vicios = false;
+        this.calma = false;
+        this.ejercicios = true;
+        this.titulo = "11 Ejercicios estoicos";
       }
     }else{
       this.mostrarMsjCon = true;
