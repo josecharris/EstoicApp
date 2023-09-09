@@ -17,10 +17,6 @@ const routes: Routes = [
         loadChildren: () => import('./../../page/practicar/practicar.module').then( m => m.PracticarPageModule)
       },
       {
-        path: 'recordatorios',
-        loadChildren: () => import('./../../page/recordatorios/recordatorios.module').then( m => m.RecordatoriosPageModule)
-      },
-      {
         path: 'conceptos',
         loadChildren: () => import('./../../page/conceptos/conceptos.module').then( m => m.ConceptosPageModule)
       },
