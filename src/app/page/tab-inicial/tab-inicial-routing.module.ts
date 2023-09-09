@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('./../../page/practicar/practicar.module').then( m => m.PracticarPageModule)
       },
       {
+        path: 'diario',
+        loadChildren: () => import('./../../page/diario/diario.module').then( m => m.DiarioPageModule)
+      },
+      {
         path: 'conceptos',
         loadChildren: () => import('./../../page/conceptos/conceptos.module').then( m => m.ConceptosPageModule)
       },
