@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MidiarioPageRoutingModule } from './midiario-routing.module';
 
 import { MidiarioPage } from './midiario.page';
+import { HttpClientModule } from '@angular/common/http'; // Asegúrate de importar HttpClientModule
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MidiarioPageRoutingModule
+    MidiarioPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [MidiarioPage]
 })

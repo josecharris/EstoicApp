@@ -5,9 +5,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">midiario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngIf="!mostrarAcordeon">
+    <ion-card-header><ion-card-title class="color-amarillo">¡Es un buen día para comenzar con tu diario personal!</ion-card-title></ion-card-header>
+    <ion-card-content>Para los filósofos estoicos, llevar un diario era importante para la autorreflexión, el autocontrol emocional y el progreso personal. Ayudaba a examinar y mejorar el comportamiento, identificar patrones de pensamiento y mantenerse fieles a principios éticos, promoviendo así la virtud y la sabiduría en la vida cotidiana.</ion-card-content>
+  </ion-card>
+  <div id="contenedor-acordeones" *ngIf="mostrarAcordeon">
+    <ion-accordion-group>
+      <ion-accordion value="first" *ngFor="let diario of listDiario">
+        <ion-item slot="header" color="light"><ion-label>{{ diario.fecha }} - {{ diario.titulo }}</ion-label></ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-card>
+            <ion-card-header><ion-card-title>{{ diario.titulo }}</ion-card-title><ion-card-subtitle>Descripción:</ion-card-subtitle></ion-card-header>
+            <ion-card-content>
+              <p>{{ diario.contenido }}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+  <div class="contanier-buttons"><div class="wrapper"><div (click)="crearRegistro()" class="ion-activatable ripple-parent">Escribir<ion-ripple-effect class="custom-ripple"></ion-ripple-effect></div></div></div>
 </ion-content>
