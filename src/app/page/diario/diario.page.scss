@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 ion-title[id="titulo"] {
     font-family: 'Playfair Display', serif;
     color: #D4AF37;
     text-align: center;
+}
+ion-button{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    --background: #121212;
+    --color: white;
+    height: 80px;
+}
+#container {
+    margin: 10%;
+}
+#container p {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 26px;
+    color: #D4AF37;
+    margin: 0;
 }
