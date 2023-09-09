@@ -67,6 +67,10 @@ const routes: Routes = [
       {
         path: 'reflexion',
         loadChildren: () => import('./../reflexion/reflexion.module').then( m => m.ReflexionPageModule)
+      },
+      {
+        path: 'midiario',
+        loadChildren: () => import('./../midiario/midiario.module').then( m => m.MidiarioPageModule)
       }
     ]
   }

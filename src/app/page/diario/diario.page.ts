@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-diario',
@@ -9,9 +10,7 @@ export class DiarioPage implements OnInit {
 
   public reflexion: string = "";
   public listaTitulos: string[] = [];
-
-  constructor() { }
-
+  constructor( private router: Router ) { }
   ngOnInit() {
     this.listaTitulos.push("La libertad no se consigue con la saciedad de lo deseado, sino con la supresión del deseo");
     this.listaTitulos.push("En compañía, guárdate de hablar mucho de tus propios actos o de las penalidades que has pasado; pues, aunque a ti te complazca hacer mención de ello, no complacerá a los otros escucharte.");
@@ -57,12 +56,15 @@ export class DiarioPage implements OnInit {
     this.listaTitulos.push("Es vergonzoso que cuando tu cuerpo no renuncia a esta vida, renuncie la primera tu alma.");
     this.listaTitulos.push("Todo es efímero: el recuerdo y el objeto recordado");
     this.listaTitulos.push("Quita fuerzas y peso a la desgracia, aquel que lleva con calma su infortunio.");
-
     this.reflexion = this.listaTitulos[this.getRandomInt(0, this.listaTitulos.length)];
   }
 
   private getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  public redirigirMiDiario(): void{
+    this.router.navigate(['/tab-inicial/midiario']);
   }
 
 }
