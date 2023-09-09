@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DiarioDTO } from '../dto/diario.dto';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,21 +9,24 @@ import { DiarioDTO } from '../dto/diario.dto';
 export class FileLoaderService {
   constructor(private http: HttpClient) {}
 
-  private loadFileData(fileUrl: string) {
-    return this.http.get(fileUrl, { responseType: 'text' });
+  obtenerRegistros(fileUrl: string): Observable<DiarioDTO[]> {
+    return new Observable<DiarioDTO[]>((observer) => {
+      this.loadFileData(fileUrl).subscribe((data) => {
+        const registrosDiario: DiarioDTO[] = [];
+        if (data != null) {
+          const cadenas: string[] = data.split('\n');
+          cadenas.forEach((cadena) => {
+            const infoCadena: string[] = cadena.split(';');
+            registrosDiario.push(new DiarioDTO(infoCadena[0], infoCadena[1], infoCadena[2]));
+          });
+        }
+        observer.next(registrosDiario);
+        observer.complete();
+      });
+    });
   }
 
-  public obtenerRegistros( fileUrl: string ): DiarioDTO[]{
-    let registrosDiario: DiarioDTO[] = [];
-    this.loadFileData(fileUrl).subscribe((data) => {
-      if(data != null){
-        let cadenas: string[] = data.split("\n");
-        cadenas.forEach(cadena=>{
-          let infoCadena: string[] = cadena.split("\n");
-          registrosDiario.push(new DiarioDTO(infoCadena[0], infoCadena[1], infoCadena[2]));
-        })
-      }
-    });
-    return registrosDiario;
+  private loadFileData(fileUrl: string): Observable<string> {
+    return this.http.get(fileUrl, { responseType: 'text' });
   }
 }

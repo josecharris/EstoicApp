@@ -21,8 +21,10 @@ export class MidiarioPage implements OnInit {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.listDiario = this.fileLoaderService.obtenerRegistros( this.URL_DIARIO );
-        this.mostrarAcordeon = this.listDiario.length > 0; 
+        this.fileLoaderService.obtenerRegistros( this.URL_DIARIO ).subscribe(data => {
+          this.listDiario = data;
+          this.mostrarAcordeon = this.listDiario.length > 0; 
+        });
       });
   }
 
@@ -30,7 +32,7 @@ export class MidiarioPage implements OnInit {
   }
 
   public crearRegistro(): void {
-    
+
   }
 
 }
