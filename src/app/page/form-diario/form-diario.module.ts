@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { FormDiarioPageRoutingModule } from './form-diario-routing.module';
 
 import { FormDiarioPage } from './form-diario.page';
+import { HttpClientModule } from '@angular/common/http'; // Asegúrate de importar HttpClientModule
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FormDiarioPageRoutingModule
+    FormDiarioPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [FormDiarioPage]
 })

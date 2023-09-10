@@ -7,8 +7,8 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-content>
-      <ion-input [(ngModel)]="titulo" label="Título" label-placement="floating" fill="outline" placeholder="Ingrese el título"></ion-input><br>
-      <ion-textarea [(ngModel)]="contenido" #hvUserPost type="text" autoGrow="true" label="Contenido" placeholder="Ingrese su reflexión del día."></ion-textarea>
+      <ion-input id="inputTitulo" [(ngModel)]="titulo" label="Título" label-placement="floating" fill="outline" placeholder="Ingrese el título"></ion-input><br>
+      <ion-textarea id="inputContenido" [(ngModel)]="contenido" #hvUserPost type="text" autoGrow="true" label="Contenido" placeholder="Ingrese su reflexión del día."></ion-textarea>
       <ion-list *ngIf="mostrarMensajeError">
         <ion-item>
           <ion-badge color="danger">¡Error de ingreso de información!</ion-badge>

@@ -1,42 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
-import { FileLoaderService } from 'src/app/service/file-loader.service';
+import jsonFile from  './../../../assets/files/json/diario.json';
+
 
 
 @Component({
   selector: 'app-midiario',
   templateUrl: './midiario.page.html',
   styleUrls: ['./midiario.page.scss'],
-  providers:  [ FileLoaderService ]
+  providers:  [ ]
 })
 export class MidiarioPage implements OnInit {
 
-  public readonly URL_DIARIO = "./../../../assets/files/txt/diario.txt";
   public listDiario: DiarioDTO[] = [];
   public mostrarAcordeon = false;
   public mapaDiarios = new Map<string, DiarioDTO[]>();
 
-  constructor( private router: Router, private fileLoaderService: FileLoaderService ) {
+  constructor( private router: Router ) {
     this.router.events
     this.listDiario = [];
-    this.fileLoaderService.obtenerRegistros( this.URL_DIARIO ).subscribe(data => {
-      this.listDiario = data;
-      this.mostrarAcordeon = this.listDiario.length > 0;
-      if( this.listDiario.length > 0 ){
-        this.listDiario.forEach(diario => {
-          if (this.mapaDiarios.has(diario.fecha)) {
-            this.mapaDiarios.get(diario.fecha)?.push(diario);
-          } else {
-            this.mapaDiarios.set(diario.fecha, [diario]);
-          }
-        });
-      }
-    });
+    this.cargarJSON();
+    this.mostrarAcordeon = this.listDiario.length > 0;
+    if( this.listDiario.length > 0 ){
+      this.listDiario.forEach(diario => {
+        if (this.mapaDiarios.has(diario.fecha)) {
+          this.mapaDiarios.get(diario.fecha)?.push(diario);
+        } else {
+          this.mapaDiarios.set(diario.fecha, [diario]);
+        }
+      });
+    }
   }
 
   ngOnInit() {
+  }
+
+  private cargarJSON() {
+    this.listDiario = jsonFile.map((diario: any) => {
+      const fecha = diario.fecha;
+      const titulo = diario.titulo;
+      const contenido = diario.contenido;
+      return new DiarioDTO( fecha, titulo, contenido );
+    });
   }
 
   public crearRegistro(): void{

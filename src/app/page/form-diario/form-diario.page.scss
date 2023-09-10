@@ -44,3 +44,10 @@ ion-title[id="titulo"] {
   .custom-ripple {
     color: #501ace;
   }
+
+  ion-input:focus {
+    --highlight-color-focused: #D4AF37;
+  }
+  ion-textarea:focus {
+    --highlight-color-focused: #D4AF37;
+  }
