@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-diario.page.scss'],
 })
 export class FormDiarioPage implements OnInit {
-
+  public mostrarMensajeError: boolean = false;
+  public titulo: string = "";
+  public contenido: string = "";
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public guardarInfo(){
+    if(this.titulo != "" && this.contenido != ""){
+      this.mostrarMensajeError = false;
+    }else{
+      this.mostrarMensajeError = true;
+    }
   }
 
 }
