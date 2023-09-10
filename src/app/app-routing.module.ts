@@ -14,10 +14,6 @@ const routes: Routes = [
   {
     path: 'tab-inicial',
     loadChildren: () => import('./page/tab-inicial/tab-inicial.module').then( m => m.TabInicialPageModule)
-  },
-  {
-    path: 'form-diario',
-    loadChildren: () => import('./page/form-diario/form-diario.module').then( m => m.FormDiarioPageModule)
   }
 ];
 

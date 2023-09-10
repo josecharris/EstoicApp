@@ -71,6 +71,10 @@ const routes: Routes = [
       {
         path: 'midiario',
         loadChildren: () => import('./../midiario/midiario.module').then( m => m.MidiarioPageModule)
+      },
+      {
+        path: 'form-diario',
+        loadChildren: () => import('./../form-diario/form-diario.module').then( m => m.FormDiarioPageModule)
       }
     ]
   }

@@ -41,8 +41,8 @@ export class MidiarioPage implements OnInit {
   ngOnInit() {
   }
 
-  public crearRegistro(): void {
-
+  public crearRegistro(): void{
+    this.router.navigate(['/tab-inicial/form-diario']);
   }
 
 }
