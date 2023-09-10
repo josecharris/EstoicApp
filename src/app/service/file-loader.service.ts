@@ -11,8 +11,8 @@ export class FileLoaderService {
 
   obtenerRegistros(fileUrl: string): Observable<DiarioDTO[]> {
     return new Observable<DiarioDTO[]>((observer) => {
+      const registrosDiario: DiarioDTO[] = [];
       this.loadFileData(fileUrl).subscribe((data) => {
-        const registrosDiario: DiarioDTO[] = [];
         if (data != null) {
           const cadenas: string[] = data.split('\n');
           cadenas.forEach((cadena) => {

@@ -20,22 +20,20 @@ export class MidiarioPage implements OnInit {
 
   constructor( private router: Router, private fileLoaderService: FileLoaderService ) {
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.fileLoaderService.obtenerRegistros( this.URL_DIARIO ).subscribe(data => {
-          this.listDiario = data;
-          this.mostrarAcordeon = this.listDiario.length > 0;
-          if( this.listDiario.length > 0 ){
-            this.listDiario.forEach(diario => {
-              if (this.mapaDiarios.has(diario.fecha)) {
-                this.mapaDiarios.get(diario.fecha)?.push(diario);
-              } else {
-                this.mapaDiarios.set(diario.fecha, [diario]);
-              }
-            });
+    this.listDiario = [];
+    this.fileLoaderService.obtenerRegistros( this.URL_DIARIO ).subscribe(data => {
+      this.listDiario = data;
+      this.mostrarAcordeon = this.listDiario.length > 0;
+      if( this.listDiario.length > 0 ){
+        this.listDiario.forEach(diario => {
+          if (this.mapaDiarios.has(diario.fecha)) {
+            this.mapaDiarios.get(diario.fecha)?.push(diario);
+          } else {
+            this.mapaDiarios.set(diario.fecha, [diario]);
           }
         });
-      });
+      }
+    });
   }
 
   ngOnInit() {
