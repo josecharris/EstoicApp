@@ -12,7 +12,6 @@ export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
   public titulo: string = "";
   public contenido: string = "";
-
   public readonly nombreArchivo = "http://localhost:3000/src/assets/files/json/diario.json";
   private registrosSubject = new BehaviorSubject<DiarioDTO[]>([]);
 
