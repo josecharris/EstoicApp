@@ -45,7 +45,7 @@ export class FormDiarioPage implements OnInit {
     return this.registrosSubject.asObservable();
   }
 
-  agregarRegistro(nuevoRegistro: DiarioDTO) {
+  public agregarRegistro(nuevoRegistro: DiarioDTO) {
     let diarios: DiarioDTO[] = this.registrosSubject.value;
     diarios.push(nuevoRegistro);
     this.registrosSubject.next(diarios);
