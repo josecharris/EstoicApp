@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Encoding, FileWriteResult } from '@capacitor/filesystem/dist/esm/definitions';
+
 
 @Component({
   selector: 'app-form-diario',
@@ -12,7 +15,7 @@ export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
   public titulo: string = "";
   public contenido: string = "";
-  public readonly nombreArchivo = "http://localhost:3000/src/assets/files/json/diario.json";
+  public readonly nombreArchivo = "./../../../assets/files/json/diario.json";
   private registrosSubject = new BehaviorSubject<DiarioDTO[]>([]);
 
   constructor( private http: HttpClient ) {
@@ -46,12 +49,22 @@ export class FormDiarioPage implements OnInit {
   }
 
   public agregarRegistro(nuevoRegistro: DiarioDTO) {
-    let diarios: DiarioDTO[] = this.registrosSubject.value;
-    diarios.push(nuevoRegistro);
-    this.registrosSubject.next(diarios);
-    this.http.put(this.nombreArchivo, diarios).subscribe(() => {
-      console.log('Nuevo registro agregado con éxito.');
-    });
+    try{
+      let diarios: DiarioDTO[] = this.registrosSubject.value;
+      diarios.push(nuevoRegistro);
+      const updatedData = JSON.stringify(diarios);
+      Filesystem.writeFile({
+        path: this.nombreArchivo,
+        data: updatedData,
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8,
+        recursive: false
+      });
+      alert('Se actualizó el registro');
+    }catch(error){
+      alert('Error al actualizar el archivo JSON:');
+    }
+    
   }
 
   
