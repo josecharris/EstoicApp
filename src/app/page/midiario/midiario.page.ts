@@ -17,8 +17,13 @@ export class MidiarioPage implements OnInit {
   public mapaDiarios = new Map<string, DiarioDTO[]>();
 
   constructor( private router: Router ) {
-    this.listDiario = [];
-    this.obtenerContenidoArchivo('diario.json');
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.listDiario = [];
+        this.mapaDiarios = new Map<string, DiarioDTO[]>();
+        this.obtenerContenidoArchivo('diario.json');
+      });
   }
 
   ngOnInit() {
@@ -26,6 +31,7 @@ export class MidiarioPage implements OnInit {
 
   private obtenerContenidoArchivo(rutaArchivo: string) : void{
     this.listDiario = [];
+    this.mapaDiarios = new Map<string, DiarioDTO[]>();
     const archivo = Filesystem.readFile({
       path: rutaArchivo,
       directory: Directory.Documents,
@@ -34,8 +40,10 @@ export class MidiarioPage implements OnInit {
       let contenido: string = result.data.toString();
       if(contenido === ""){
         this.listDiario = [];
+        this.mapaDiarios = new Map<string, DiarioDTO[]>();
       }else{
         this.listDiario = [];
+        this.mapaDiarios = new Map<string, DiarioDTO[]>();
         let listaContenido: DiarioDTO[] = JSON.parse(contenido);
         this.listDiario = listaContenido;
       }
