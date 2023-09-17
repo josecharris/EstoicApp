@@ -32,7 +32,7 @@ export class FormDiarioPage implements OnInit {
 
   private obtenerContenidoArchivo(nuevoRegistro: DiarioDTO) : void{
     const archivo = Filesystem.readFile({
-      path: 'diario.json',
+      path: 'estoicapp/diario.json',
       directory: Directory.Documents,
       encoding: Encoding.UTF8,
     }).then(result =>{
@@ -48,7 +48,7 @@ export class FormDiarioPage implements OnInit {
         diarios.push(nuevoRegistro);
         const updatedData = JSON.stringify(diarios);
         Filesystem.writeFile({
-          path: 'diario.json',
+          path: 'estoicapp/diario.json',
           data: updatedData,
           directory: Directory.Documents,
           encoding: Encoding.UTF8,
@@ -65,25 +65,18 @@ export class FormDiarioPage implements OnInit {
       }catch(error){
         alert('Error al actualizar el archivo JSON:' + error);
       }
-    }).catch(() =>{
-      Filesystem.mkdir({
-        path: 'diario.json',
-        directory: Directory.Documents
-      }).then(() => {
-        //CREAR ARCHIVO
-        Filesystem.writeFile({
-          path: 'diario.json',
-          data: "",
-          directory: Directory.Documents,
-          encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
-        }).then(result => {
-          if(result.uri){
-            alert("Archivo creado");
-          }
-        })
-      }).catch(error => {
-        alert("Se presentó error : " + error);
-      });
+    }).catch((error) =>{
+      //CREAR ARCHIVO
+      Filesystem.writeFile({
+        path: 'estoicapp/diario.json',
+        data: "",
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
+      }).then(result => {
+        if(result.uri){
+          alert("Archivo creado");
+        }
+      })
     });
   }
 

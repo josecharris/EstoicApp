@@ -22,7 +22,7 @@ export class MidiarioPage implements OnInit {
       .subscribe(() => {
         this.listDiario = [];
         this.mapaDiarios = new Map<string, DiarioDTO[]>();
-        this.obtenerContenidoArchivo('diario.json');
+        this.obtenerContenidoArchivo('estoicapp/diario.json');
       });
   }
 
@@ -58,22 +58,31 @@ export class MidiarioPage implements OnInit {
         });
       }
     }).catch(() =>{
-      //CREAR ARCHIVO
-      Filesystem.writeFile({
-        path: rutaArchivo,
-        data: "",
+      let ret = Filesystem.mkdir({
+        path: "estoicapp",
         directory: Directory.Documents,
-        encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
-      }).then(result=>{
-        if(result.uri){
-          this.listDiario = [];
-          alert("Archivo creado");
-        }else{
-          alert("El archivo no se creó");
-        }
-      }).catch(error =>{
+        recursive: false,
+      }).then(result =>{
+        alert("Se creó el directorio");
+        //CREAR ARCHIVO
+        Filesystem.writeFile({
+          path: rutaArchivo,
+          data: "",
+          directory: Directory.Documents,
+          encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
+        }).then(result=>{
+          if(result.uri){
+            this.listDiario = [];
+            alert("Archivo creado");
+          }else{
+            alert("El archivo no se creó");
+          }
+        }).catch(error =>{
+          alert(error);
+        })
+      }).catch(error => {
         alert(error);
-      })
+      });
     });
   }
 
