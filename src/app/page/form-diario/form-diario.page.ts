@@ -48,6 +48,8 @@ export class FormDiarioPage implements OnInit {
     let query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + nuevoRegistro.fecha +"', '"+nuevoRegistro.titulo +"', '"+ nuevoRegistro.contenido +"')";
     this.db.executeSql(query, [])
     .then(result => {
+      this.titulo = "";
+      this.contenido = "";
       this.redirigirAnterior();
     }).catch(error=>{
       alert(error);
