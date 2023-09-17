@@ -14,12 +14,9 @@ export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
   public titulo: string = "";
   public contenido: string = "";
+  constructor( private router: Router) { }
 
-  constructor( private router: Router) {
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   public guardarInfo(){
     if(this.titulo != "" && this.contenido != ""){
@@ -66,7 +63,7 @@ export class FormDiarioPage implements OnInit {
           }
         });
       }catch(error){
-        alert('Error al actualizar el archivo JSON:');
+        alert('Error al actualizar el archivo JSON:' + error);
       }
     }).catch(() =>{
       Filesystem.mkdir({
@@ -79,10 +76,13 @@ export class FormDiarioPage implements OnInit {
           data: "",
           directory: Directory.Documents,
           encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
+        }).then(result => {
+          if(result.uri){
+            alert("Archivo creado");
+          }
         })
-        alert("Archivo creado");
       }).catch(error => {
-        alert("ERROR!!!");
+        alert("Se presentó error : " + error);
       });
     });
   }

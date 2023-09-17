@@ -64,9 +64,16 @@ export class MidiarioPage implements OnInit {
         data: "",
         directory: Directory.Documents,
         encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
+      }).then(result=>{
+        if(result.uri){
+          this.listDiario = [];
+          alert("Archivo creado");
+        }else{
+          alert("El archivo no se creó");
+        }
+      }).catch(error =>{
+        alert(error);
       })
-      this.listDiario = [];
-      alert("Archivo creado");
     });
   }
 
