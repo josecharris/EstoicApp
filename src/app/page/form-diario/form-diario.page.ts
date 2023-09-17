@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Encoding, FileWriteResult } from '@capacitor/filesystem/dist/esm/definitions';
 import { Router } from '@angular/router';
 
 
@@ -24,60 +22,14 @@ export class FormDiarioPage implements OnInit {
       let fecha: Date = new Date();
       let desdeStr = `${fecha.getFullYear()}-${('0'+(fecha.getMonth()+1)).slice(-2)}-${fecha.getDate()}`;
       let diarioDTO: DiarioDTO = new DiarioDTO(desdeStr, this.titulo, this.contenido);
-      this.obtenerContenidoArchivo( diarioDTO );
+      this.agregarDiario( diarioDTO );
     }else{
       this.mostrarMensajeError = true;
     }
   }
 
-  private obtenerContenidoArchivo(nuevoRegistro: DiarioDTO) : void{
-    const archivo = Filesystem.readFile({
-      path: 'estoicapp/diario.json',
-      directory: Directory.Documents,
-      encoding: Encoding.UTF8,
-    }).then(result =>{
-      try{
-        let contenido: any = result.data.toString();
-        let diarios: DiarioDTO[] = [];
-        if(contenido === ""){
-          diarios = [];
-        }else{
-          let listaContenido: DiarioDTO[] = JSON.parse(contenido);
-          diarios = listaContenido;
-        }
-        diarios.push(nuevoRegistro);
-        const updatedData = JSON.stringify(diarios);
-        Filesystem.writeFile({
-          path: 'estoicapp/diario.json',
-          data: updatedData,
-          directory: Directory.Documents,
-          encoding: Encoding.UTF8,
-          recursive: false
-        }).then(result => {
-          if(result.uri){
-            this.titulo = "";
-            this.contenido = "";
-            this.redirigirAnterior();
-          }else{
-            alert('NO SE ACTUALIZO EL DOC');
-          }
-        });
-      }catch(error){
-        alert('Error al actualizar el archivo JSON:' + error);
-      }
-    }).catch((error) =>{
-      //CREAR ARCHIVO
-      Filesystem.writeFile({
-        path: 'estoicapp/diario.json',
-        data: "",
-        directory: Directory.Documents,
-        encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
-      }).then(result => {
-        if(result.uri){
-          alert("Archivo creado");
-        }
-      })
-    });
+  private agregarDiario(nuevoRegistro: DiarioDTO) : void{
+    
   }
 
   public redirigirAnterior(): void{
