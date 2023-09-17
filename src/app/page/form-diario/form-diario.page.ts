@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { Router } from '@angular/router';
+import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 
 
 @Component({
@@ -12,9 +13,13 @@ export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
   public titulo: string = "";
   public contenido: string = "";
-  constructor( private router: Router) { }
+  public db: SQLiteObject;
 
-  ngOnInit() { }
+  constructor( private router: Router, private sqlite: SQLite ) { }
+
+  ngOnInit() {
+    this.createOpenDatabase();
+  }
 
   public guardarInfo(){
     if(this.titulo != "" && this.contenido != ""){
@@ -28,8 +33,25 @@ export class FormDiarioPage implements OnInit {
     }
   }
 
+  private createOpenDatabase(): void{
+    this.sqlite.create({
+      name: "data.db",
+      location: "default"
+    }).then(result =>{
+      this.db = result;
+    }).catch(error=>{
+      alert(error);
+    })
+  }
+
   private agregarDiario(nuevoRegistro: DiarioDTO) : void{
-    
+    let query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + nuevoRegistro.fecha +"', '"+nuevoRegistro.titulo +"', '"+ nuevoRegistro.contenido +"')";
+    this.db.executeSql(query, [])
+    .then(result => {
+      alert("Record inserted!");
+    }).catch(error=>{
+      alert(error);
+    })
   }
 
   public redirigirAnterior(): void{
