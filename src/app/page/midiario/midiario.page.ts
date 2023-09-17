@@ -37,7 +37,6 @@ export class MidiarioPage implements OnInit {
     }).then(db =>{
       db.executeSql('CREATE TABLE IF NOT EXISTS DIARIO(fecha varchar(15), titulo varchar(50), contenido varchar(1000))', [])
       .then(result => {
-        alert("Tabla creada");
         db.executeSql('SELECT * FROM DIARIO', [])
         .then(result => {
           for(let i=0; i<result.rows.length; i++){
