@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Encoding, FileWriteResult } from '@capacitor/filesystem/dist/esm/definitions';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +15,7 @@ export class FormDiarioPage implements OnInit {
   public titulo: string = "";
   public contenido: string = "";
 
-  constructor( private http: HttpClient ) {
+  constructor( private router: Router) {
   }
 
   ngOnInit() {
@@ -59,9 +58,9 @@ export class FormDiarioPage implements OnInit {
           recursive: false
         }).then(result => {
           if(result.uri){
-            alert('Se actualizó el DOC');
             this.titulo = "";
             this.contenido = "";
+            this.redirigirAnterior();
           }else{
             alert('NO SE ACTUALIZO EL DOC');
           }
@@ -86,6 +85,10 @@ export class FormDiarioPage implements OnInit {
         alert("ERROR!!!");
       });
     });
+  }
+
+  public redirigirAnterior(): void{
+    this.router.navigate(['/tab-inicial/midiario']);
   }
 
   
