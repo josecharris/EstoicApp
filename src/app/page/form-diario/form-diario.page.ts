@@ -15,11 +15,8 @@ export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
   public titulo: string = "";
   public contenido: string = "";
-  public readonly nombreArchivo = "./../../../assets/files/json/diario.json";
-  private registrosSubject = new BehaviorSubject<DiarioDTO[]>([]);
 
   constructor( private http: HttpClient ) {
-    this.cargarRegistros();
   }
 
   ngOnInit() {
@@ -37,30 +34,61 @@ export class FormDiarioPage implements OnInit {
     }
   }
 
-  private cargarRegistros() {
-    this.http.get<any[]>(this.nombreArchivo).subscribe((registros) => {
-      this.registrosSubject.next(registros || []); // Inicializa como un arreglo vacío si no hay datos
-
+  private obtenerContenidoArchivo(rutaArchivo: string) : string{
+    let retorno = "";
+    const archivo = Filesystem.readFile({
+      path: rutaArchivo,
+      directory: Directory.Documents,
+      encoding: Encoding.UTF8,
+    }).then(result =>{
+      retorno = result.data.toString();
+    }).catch(() =>{
+      Filesystem.mkdir({
+        path: rutaArchivo,
+        directory: Directory.Documents
+      }).then(() => {
+        //CREAR ARCHIVO
+        Filesystem.writeFile({
+          path: rutaArchivo,
+          data: "",
+          directory: Directory.Documents,
+          encoding: Encoding.UTF8, // Puedes cambiar la codificación según tus necesidades
+        })
+        alert("Archivo creado");
+      }).catch(error => {
+        alert("ERROR!!!");
+      });
     });
-  }
-
-  get registros$() {
-    return this.registrosSubject.asObservable();
+    return retorno;
   }
 
   public agregarRegistro(nuevoRegistro: DiarioDTO) {
     try{
-      let diarios: DiarioDTO[] = this.registrosSubject.value;
+      let contenido: any = this.obtenerContenidoArchivo('diario.json');
+      let diarios: DiarioDTO[] = [];
+      if(contenido === ""){
+        diarios = [];
+      }else{
+        let listaContenido: DiarioDTO[] = JSON.parse(contenido);
+        diarios = listaContenido;
+      }
       diarios.push(nuevoRegistro);
       const updatedData = JSON.stringify(diarios);
       Filesystem.writeFile({
-        path: this.nombreArchivo,
+        path: 'diario.json',
         data: updatedData,
         directory: Directory.Documents,
         encoding: Encoding.UTF8,
         recursive: false
+      }).then(result => {
+        if(result.uri){
+          alert('Se actualizó el DOC');
+          this.titulo = "";
+          this.contenido = "";
+        }else{
+          alert('NO SE ACTUALIZO EL DOC');
+        }
       });
-      alert('Se actualizó el registro');
     }catch(error){
       alert('Error al actualizar el archivo JSON:');
     }
