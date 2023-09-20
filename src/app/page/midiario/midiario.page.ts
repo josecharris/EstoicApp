@@ -68,13 +68,13 @@ export class MidiarioPage implements OnInit {
 
   public editarRegistro( diarioDTO: DiarioDTO ): void{
     this.lecturaPasoParametrosService.infoLibro.clear();
-    this.lecturaPasoParametrosService.infoLibro.set("idDiario", diarioDTO.idDiario);
+    this.lecturaPasoParametrosService.infoLibro.set("idDiario", diarioDTO.idDiario.toString());
     this.lecturaPasoParametrosService.infoLibro.set("titulo", diarioDTO.titulo);
     this.lecturaPasoParametrosService.infoLibro.set("contenido", diarioDTO.contenido);
   }
 
   public eliminarRegistro(): void{
-
+    
   }
 
   public crearRegistro(): void{

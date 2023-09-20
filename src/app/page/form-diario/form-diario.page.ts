@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { Router } from '@angular/router';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
+import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
 
 
 @Component({
@@ -11,11 +12,13 @@ import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 })
 export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
+  public modoActualizacion: boolean = false;
   public titulo: string = "";
   public contenido: string = "";
   public db: SQLiteObject;
 
-  constructor( private router: Router, private sqlite: SQLite ) { }
+  constructor( private router: Router, private sqlite: SQLite,
+    private lecturaPasoParametrosService: LecturaPasoParametrosService ) { }
 
   ngOnInit() {
     this.createOpenDatabase();
@@ -33,26 +36,39 @@ export class FormDiarioPage implements OnInit {
   }
 
   private createOpenDatabase(): void{
-    this.sqlite.create({
-      name: "data.db",
-      location: "default"
-    }).then(result =>{
-      this.db = result;
-    }).catch(error=>{
-      alert(error);
-    })
+    let idDiario = this.lecturaPasoParametrosService.infoLibro.get("idDiario");
+    if( idDiario != null && idDiario != ""){
+      this.titulo = this.lecturaPasoParametrosService.infoLibro.get("titulo")!;
+      this.contenido = this.lecturaPasoParametrosService.infoLibro.get("contenido")!;
+      this.modoActualizacion = true;
+    }else{
+      this.sqlite.create({
+        name: "data.db",
+        location: "default"
+      }).then(result =>{
+        this.db = result;
+      }).catch(error=>{
+        alert(error);
+      })
+    }
   }
 
   private agregarDiario(fecha: string) : void{
-    let query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + fecha +"', '"+this.titulo +"', '"+ this.contenido +"')";
+    let query: string = "";
+    if(!this.modoActualizacion){
+      query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + fecha +"', '"+this.titulo +"', '"+ this.contenido +"')";
+    }else{
+      query = "UPDATE DIARIO SET titulo ='" +this.titulo +"', contenido = '"+ this.contenido +"'";
+    }
     this.db.executeSql(query, [])
-    .then(result => {
-      this.titulo = "";
-      this.contenido = "";
-      this.redirigirAnterior();
-    }).catch(error=>{
-      alert(error);
-    })
+      .then(result => {
+        this.titulo = "";
+        this.contenido = "";
+        this.redirigirAnterior();
+      }).catch(error=>{
+        alert(error);
+      })
+    
   }
 
   public redirigirAnterior(): void{
