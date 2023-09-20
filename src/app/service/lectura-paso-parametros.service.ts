@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LecturaPasoParametrosService {
 
-  public infoLibro = new Map<string, string>();
+  public infoLibro = new Map<string, Object>();
 
   constructor( ) { }
 }

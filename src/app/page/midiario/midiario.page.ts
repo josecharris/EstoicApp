@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { filter } from 'rxjs/operators';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
+import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class MidiarioPage implements OnInit {
   public mostrarAcordeon = false;
   public mapaDiarios = new Map<string, DiarioDTO[]>();
 
-  constructor( private router: Router, private sqlite: SQLite ) {
+  constructor( private router: Router, private sqlite: SQLite, 
+    private lecturaPasoParametrosService: LecturaPasoParametrosService ) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -35,12 +37,13 @@ export class MidiarioPage implements OnInit {
       name: "data.db",
       location: "default"
     }).then(db =>{
-      db.executeSql('CREATE TABLE IF NOT EXISTS DIARIO(fecha varchar(15), titulo varchar(50), contenido varchar(1000))', [])
+      db.executeSql('CREATE TABLE IF NOT EXISTS DIARIO(idDiario INTEGER PRIMARY KEY AUTOINCREMENT, fecha varchar(15), titulo varchar(50), contenido varchar(1000))', [])
       .then(result => {
         db.executeSql('SELECT * FROM DIARIO', [])
         .then(result => {
           for(let i=0; i<result.rows.length; i++){
-            this.listDiario.push(new DiarioDTO(result.rows.item(i).fecha, result.rows.item(i).titulo, result.rows.item(i).contenido));
+            this.listDiario.push(new DiarioDTO(result.rows.item(i).idDiario, result.rows.item(i).fecha, 
+              result.rows.item(i).titulo, result.rows.item(i).contenido));
           }
           this.mostrarAcordeon = this.listDiario.length > 0;
             if( this.listDiario.length > 0 ){
@@ -63,12 +66,15 @@ export class MidiarioPage implements OnInit {
     })
   }
 
-  public editarRegistro(): void{
-
+  public editarRegistro( diarioDTO: DiarioDTO ): void{
+    this.lecturaPasoParametrosService.infoLibro.clear();
+    this.lecturaPasoParametrosService.infoLibro.set("idDiario", diarioDTO.idDiario);
+    this.lecturaPasoParametrosService.infoLibro.set("titulo", diarioDTO.titulo);
+    this.lecturaPasoParametrosService.infoLibro.set("contenido", diarioDTO.contenido);
   }
 
   public eliminarRegistro(): void{
-    
+
   }
 
   public crearRegistro(): void{

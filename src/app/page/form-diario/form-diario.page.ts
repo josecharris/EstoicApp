@@ -26,8 +26,7 @@ export class FormDiarioPage implements OnInit {
       this.mostrarMensajeError = false;
       let fecha: Date = new Date();
       let desdeStr = `${fecha.getFullYear()}-${('0'+(fecha.getMonth()+1)).slice(-2)}-${fecha.getDate()}`;
-      let diarioDTO: DiarioDTO = new DiarioDTO(desdeStr, this.titulo, this.contenido);
-      this.agregarDiario( diarioDTO );
+      this.agregarDiario( desdeStr);
     }else{
       this.mostrarMensajeError = true;
     }
@@ -44,8 +43,8 @@ export class FormDiarioPage implements OnInit {
     })
   }
 
-  private agregarDiario(nuevoRegistro: DiarioDTO) : void{
-    let query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + nuevoRegistro.fecha +"', '"+nuevoRegistro.titulo +"', '"+ nuevoRegistro.contenido +"')";
+  private agregarDiario(fecha: string) : void{
+    let query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + fecha +"', '"+this.titulo +"', '"+ this.contenido +"')";
     this.db.executeSql(query, [])
     .then(result => {
       this.titulo = "";
