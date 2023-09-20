@@ -63,6 +63,14 @@ export class MidiarioPage implements OnInit {
     })
   }
 
+  public editarRegistro(): void{
+
+  }
+
+  public eliminarRegistro(): void{
+    
+  }
+
   public crearRegistro(): void{
     this.router.navigate(['/tab-inicial/form-diario']);
   }
