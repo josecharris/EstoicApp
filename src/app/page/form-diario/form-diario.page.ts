@@ -13,8 +13,9 @@ import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-param
 export class FormDiarioPage implements OnInit {
   public mostrarMensajeError: boolean = false;
   public modoActualizacion: boolean = false;
-  public titulo: string = "";
-  public contenido: string = "";
+  public idDiario: number;
+  public titulo: string;
+  public contenido: string;
   public db: SQLiteObject;
 
   constructor( private router: Router, private sqlite: SQLite,
@@ -36,8 +37,8 @@ export class FormDiarioPage implements OnInit {
   }
 
   private createOpenDatabase(): void{
-    let idDiario = this.lecturaPasoParametrosService.infoLibro.get("idDiario");
-    if( idDiario != null && idDiario != ""){
+    if( this.lecturaPasoParametrosService.infoLibro.get("idDiario") != null ){
+      this.idDiario = Number(this.lecturaPasoParametrosService.infoLibro.get("idDiario"));
       this.titulo = this.lecturaPasoParametrosService.infoLibro.get("titulo")!;
       this.contenido = this.lecturaPasoParametrosService.infoLibro.get("contenido")!;
       this.modoActualizacion = true;
@@ -57,10 +58,7 @@ export class FormDiarioPage implements OnInit {
     let query: string = "";
     if(!this.modoActualizacion){
       query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + fecha +"', '"+this.titulo +"', '"+ this.contenido +"')";
-    }else{
-      query = "UPDATE DIARIO SET titulo ='" +this.titulo +"', contenido = '"+ this.contenido +"'";
-    }
-    this.db.executeSql(query, [])
+      this.db.executeSql(query, [])
       .then(result => {
         this.titulo = "";
         this.contenido = "";
@@ -68,6 +66,15 @@ export class FormDiarioPage implements OnInit {
       }).catch(error=>{
         alert(error);
       })
+    }else{
+      this.db.executeSql("UPDATE DIARIO SET titulo=?, contenido=? WHERE ?", [this.titulo, this.contenido, this.idDiario])
+      .then(( ) => {
+        alert("Registro actualizado.");
+      }).catch(error => {
+        alert(error);
+      })
+    }
+    
     
   }
 

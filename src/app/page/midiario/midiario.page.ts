@@ -73,7 +73,7 @@ export class MidiarioPage implements OnInit {
     this.lecturaPasoParametrosService.infoLibro.set("contenido", diarioDTO.contenido);
   }
 
-  public eliminarRegistro(): void{
+  public eliminarRegistro( diarioDTO: DiarioDTO ): void{
     
   }
 
