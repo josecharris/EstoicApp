@@ -71,6 +71,7 @@ export class MidiarioPage implements OnInit {
     this.lecturaPasoParametrosService.infoLibro.set("idDiario", diarioDTO.idDiario.toString());
     this.lecturaPasoParametrosService.infoLibro.set("titulo", diarioDTO.titulo);
     this.lecturaPasoParametrosService.infoLibro.set("contenido", diarioDTO.contenido);
+    this.router.navigate(['/tab-inicial/form-diario']);
   }
 
   public eliminarRegistro( diarioDTO: DiarioDTO ): void{
