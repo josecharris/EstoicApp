@@ -29,7 +29,7 @@ export class FormDiarioPage implements OnInit {
   }
 
   public guardarInfo(){
-    if(this.titulo != "" && this.contenido != ""){
+    if( !(this.titulo) && this.titulo != "" && !(this.contenido) && this.contenido != "" ){
       this.mostrarMensajeError = false;
       let fecha: Date = new Date();
       let desdeStr = `${fecha.getFullYear()}-${('0'+(fecha.getMonth()+1)).slice(-2)}-${fecha.getDate()}`;
@@ -55,6 +55,7 @@ export class FormDiarioPage implements OnInit {
         alert(error);
       })
     }
+    this.lecturaPasoParametrosService.infoLibro.clear();
   }
 
   private agregarDiario(fecha: string) : void{
