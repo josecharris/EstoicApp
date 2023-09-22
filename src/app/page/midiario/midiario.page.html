@@ -10,7 +10,7 @@
   </ion-card>
   <div id="contenedor-acordeones" *ngIf="mostrarAcordeon">
     <ion-accordion-group>
-      <ion-accordion *ngFor="let entry of mapaDiarios.entries()">
+      <ion-accordion value="{{ entry[0] }}" *ngFor="let entry of mapaDiarios.entries()">
         <ion-item slot="header" color="light"><ion-label>{{ entry[0] }}</ion-label></ion-item>
         <div class="ion-padding" slot="content">
           <ion-card *ngFor="let diario of entry[1]">
