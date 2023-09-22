@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { filter } from 'rxjs/operators';
-import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
+import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
 
 

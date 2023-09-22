@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
-
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-form-diario',
@@ -21,7 +21,11 @@ export class FormDiarioPage implements OnInit {
     private lecturaPasoParametrosService: LecturaPasoParametrosService ) { }
 
   ngOnInit() {
-    this.createOpenDatabase();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.createOpenDatabase();
+      });
   }
 
   public guardarInfo(){
@@ -69,6 +73,7 @@ export class FormDiarioPage implements OnInit {
       this.db.executeSql("UPDATE DIARIO SET titulo=?, contenido=? WHERE ?", [this.titulo, this.contenido, this.idDiario])
       .then(( ) => {
         alert("Registro actualizado.");
+        this.redirigirAnterior();
       }).catch(error => {
         alert(error);
       })
