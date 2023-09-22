@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { Router } from '@angular/router';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
