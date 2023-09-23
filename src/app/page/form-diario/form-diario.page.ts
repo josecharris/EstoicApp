@@ -40,20 +40,19 @@ export class FormDiarioPage implements OnInit {
   }
 
   private createOpenDatabase(): void{
+    this.sqlite.create({
+      name: "data.db",
+      location: "default"
+    }).then(result =>{
+      this.db = result;
+    }).catch(error=>{
+      alert(error);
+    })
     if( this.lecturaPasoParametrosService.infoLibro.get("idDiario") != null ){
       this.idDiario = Number(this.lecturaPasoParametrosService.infoLibro.get("idDiario"));
       this.titulo = this.lecturaPasoParametrosService.infoLibro.get("titulo")!;
       this.contenido = this.lecturaPasoParametrosService.infoLibro.get("contenido")!;
       this.modoActualizacion = true;
-    }else{
-      this.sqlite.create({
-        name: "data.db",
-        location: "default"
-      }).then(result =>{
-        this.db = result;
-      }).catch(error=>{
-        alert(error);
-      })
     }
     this.lecturaPasoParametrosService.infoLibro.clear();
   }
@@ -63,15 +62,16 @@ export class FormDiarioPage implements OnInit {
     if(!this.modoActualizacion){
       query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + fecha +"', '"+this.titulo +"', '"+ this.contenido +"')";
       this.db.executeSql(query, [])
-      .then(result => {
+      .then(( ) => {
         this.titulo = "";
         this.contenido = "";
+        alert("Registro creado.");
         this.redirigirAnterior();
       }).catch(error=>{
         alert(error);
       })
     }else{
-      this.db.executeSql("UPDATE DIARIO SET titulo=?, contenido=? WHERE ?", [this.titulo, this.contenido, this.idDiario])
+      this.db.executeSql("UPDATE DIARIO SET titulo=?, contenido=? WHERE idDiario=?", [this.titulo, this.contenido, this.idDiario])
       .then(( ) => {
         alert("Registro actualizado.");
         this.redirigirAnterior();
@@ -79,8 +79,6 @@ export class FormDiarioPage implements OnInit {
         alert(error);
       })
     }
-    
-    
   }
 
   public redirigirAnterior(): void{
