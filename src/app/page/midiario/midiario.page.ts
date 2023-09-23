@@ -17,6 +17,22 @@ export class MidiarioPage implements OnInit {
   public listDiario: DiarioDTO[] = [];
   public mostrarAcordeon = false;
   public mapaDiarios = new Map<string, DiarioDTO[]>();
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+      },
+    },
+  ];
 
   constructor( private router: Router, private sqlite: SQLite, 
     private lecturaPasoParametrosService: LecturaPasoParametrosService ) {
@@ -77,12 +93,35 @@ export class MidiarioPage implements OnInit {
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
-  public eliminarRegistro( diarioDTO: DiarioDTO ): void{
-    
-  }
-
   public crearRegistro(): void{
     this.router.navigate(['/tab-inicial/form-diario']);
+  }
+
+  public setResult(ev: any, idDiario: number, fecha: string) {
+    alert("IN");
+    if(ev.detail.role == "confirm"){
+      alert("Confirm!");
+      this.sqlite.create({
+        name: "data.db",
+        location: "default"
+      }).then(db =>{
+        db.executeSql('CREATE TABLE IF NOT EXISTS DIARIO(idDiario INTEGER PRIMARY KEY AUTOINCREMENT, fecha varchar(15), titulo varchar(50), contenido varchar(1000))', [])
+        .then(result => {
+          db.executeSql('DELETE FROM DIARIO WHERE idDiario=?', [idDiario])
+          .then(result => {
+            alert("¡Registro eliminado!");
+            let diarioFecha: DiarioDTO[] = this.mapaDiarios.get(fecha) ?? [];
+            this.mapaDiarios.set(fecha, diarioFecha?.filter(diario => diario.idDiario !=idDiario));
+          }).catch(error => {
+            alert(error);
+          })
+        }).catch(error => {
+          alert(error);
+        });
+      }).catch(error=>{
+        alert(error);
+      })
+    }
   }
 
 }

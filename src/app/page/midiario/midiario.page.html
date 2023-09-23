@@ -10,7 +10,7 @@
   </ion-card>
   <div id="contenedor-acordeones" *ngIf="mostrarAcordeon">
     <ion-accordion-group>
-      <ion-accordion value="{{ entry[0] }}" *ngFor="let entry of mapaDiarios.entries()">
+      <ion-accordion value="{{ entry[0] }}" *ngFor="let entry of mapaDiarios.entries(); let i = index">
         <ion-item slot="header" color="light"><ion-label>{{ entry[0] }}</ion-label></ion-item>
         <div class="ion-padding" slot="content">
           <ion-card *ngFor="let diario of entry[1]">
@@ -19,7 +19,13 @@
               <p>{{ diario.contenido }}</p>
             </ion-card-content>
             <ion-button fill="clear" (click)="editarRegistro(diario)">Editar</ion-button>
-            <ion-button fill="clear" (click)="eliminarRegistro(diario)">Eliminar</ion-button>
+            <ion-button fill="clear" id="delete-alert{{i}}">Eliminar</ion-button>
+            <ion-alert
+              trigger="delete-alert{{i}}"
+              header="¿Seguro que desea continuar con la operación?"
+              [buttons]="alertButtons"
+              (didDismiss)="setResult($event, diario.idDiario, entry[0])"
+            ></ion-alert>
           </ion-card>
         </div>
       </ion-accordion>
