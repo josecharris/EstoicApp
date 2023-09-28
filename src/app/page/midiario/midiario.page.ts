@@ -45,8 +45,7 @@ export class MidiarioPage implements OnInit {
       });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   private cargarInfo(): void{
     this.sqlite.create({
