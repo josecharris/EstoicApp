@@ -16,7 +16,7 @@ export class FormDiarioPage implements OnInit {
   public titulo: string;
   public contenido: string;
   public db: SQLiteObject;
-
+  
   constructor( private router: Router, private sqlite: SQLite,
     private lecturaPasoParametrosService: LecturaPasoParametrosService ) { }
 
@@ -83,8 +83,6 @@ export class FormDiarioPage implements OnInit {
 
   public redirigirAnterior(): void{
     this.router.navigate(['/tab-inicial/midiario']);
-  }
-
-  
+  }  
 
 }
