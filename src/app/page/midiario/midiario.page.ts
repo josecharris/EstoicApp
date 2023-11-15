@@ -14,6 +14,8 @@ import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-param
 })
 export class MidiarioPage implements OnInit {
 
+  private idDiario: number;
+  private fecha: string;
   public listDiario: DiarioDTO[] = [];
   public mostrarAcordeon = false;
   public mapaDiarios = new Map<string, DiarioDTO[]>();
@@ -93,10 +95,20 @@ export class MidiarioPage implements OnInit {
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
-  public setResult(ev: any, idDiario: number, fecha: string) {
-    alert("IN");
-    if(ev.detail.role == "confirm"){
-      alert("Confirm!");
+  public asignarValoresEliminar( idDiario: number, fecha: string ){
+    this.idDiario = idDiario;
+    this.fecha = fecha;
+  }
+
+  setResult(ev: any) {
+    alert(`Dismissed with role: ${ev.detail.role}`);
+    if( ev.detail.role === 'confirm'){
+      this.eliminarRegistro( this.idDiario, this.fecha );
+    }
+  }
+
+  public eliminarRegistro( idDiario: number, fecha: string ){
+    if( idDiario !== null && idDiario !== undefined && fecha !== null && fecha !== undefined ){
       this.sqlite.create({
         name: "data.db",
         location: "default"
