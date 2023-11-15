@@ -36,6 +36,7 @@ export class FormDiarioPage implements OnInit {
   
   /** 
    * <b>Descripción:</b> constructor del componente<br>
+   * @author jcharris
    * @param router  Parámetro que determina la navegación entre componentes
    * @param sqlite  Parámetro que determina la instancia con el motor de BD
    * @param lecturaPasoParametrosService  Parámetro que determina el paso de información
@@ -47,7 +48,8 @@ export class FormDiarioPage implements OnInit {
     public alertController: AlertController ) { }
 
   /**
-   * <b>Descripción:</b> Determina la construcción del componente
+   * <b>Descripción:</b> Determina la construcción del componente<br>
+   * @author jcharris
   */
   ngOnInit() {
     this.router.events
@@ -57,7 +59,11 @@ export class FormDiarioPage implements OnInit {
       });
   }
 
-  public guardarInfo(){
+  /**
+   * <b>Descripción:</b> Método encargado de persistir información de diario<br>
+   * @author jcharris
+  */
+  public guardarInfo(): void{
     if( this.titulo != undefined && this.titulo != "" && this.contenido != undefined && this.contenido != "" ){
       this.mostrarMensajeError = false;
       let fecha: Date = new Date();
@@ -68,6 +74,10 @@ export class FormDiarioPage implements OnInit {
     }
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de crear la conexión con la base de datos<br>
+   * @author jcharris
+  */
   private createOpenDatabase(): void{
     this.sqlite.create({
       name: "data.db",
@@ -86,6 +96,11 @@ export class FormDiarioPage implements OnInit {
     this.lecturaPasoParametrosService.infoLibro.clear();
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de agregar un nuevo registro al diario<br>
+   * @author jcharris
+   * @param fecha Parámetro que determina la fecha relacionada con el registro de diario.
+  */
   private agregarDiario(fecha: string) : void{
     let query: string = "";
     if(!this.modoActualizacion){
@@ -110,10 +125,21 @@ export class FormDiarioPage implements OnInit {
     }
   }
 
-  public redirigirAnterior(): void{
+  /**
+   * <b>Descripción:</b> Método encargado de redirigir hacia el componente que invocó
+   * la pantalla de diario<br>
+   * @author jcharris
+  */
+  private redirigirAnterior(): void{
     this.router.navigate(['/tab-inicial/midiario']);
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado mostrar mensaje al usuario<br>
+   * @author jcharris
+   * @param titulo Parámetro que determina el título
+   * @param texto Parámetro que determina el texto
+  */
   async mostrarMensaje(titulo: string, texto: string) {
     const alert = await this.alertController.create({
       header: titulo,
