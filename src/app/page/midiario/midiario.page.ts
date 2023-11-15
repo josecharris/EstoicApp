@@ -6,21 +6,37 @@ import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
 import { AlertController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-midiario',
   templateUrl: './midiario.page.html',
   styleUrls: ['./midiario.page.scss'],
   providers:  [ ]
 })
+
+/** 
+ * <b>Descripción:</b> Componente que determina el componente la administración de la información de diarios<br>
+ * @autor jcharris
+*/
 export class MidiarioPage implements OnInit {
 
-  private idDiario: number;
-  private fecha: string;
+  /** Atributo que determina la lista de reflexiones diarias realizadas por el usuario */
   public listDiario: DiarioDTO[] = [];
+
+  /** Atributo que determina el indicador para mostrar el componente de acordeón*/
   public mostrarAcordeon = false;
+
+  /** Atributo que determina la información de diarios clasificada por fecha */
   public mapaDiarios = new Map<string, DiarioDTO[]>();
 
+  /** 
+   * <b>Descripción:</b> constructor del componente<br>
+   * @author jcharris
+   * @param router  Parámetro que determina la navegación entre componentes
+   * @param sqlite  Parámetro que determina la instancia con el motor de BD
+   * @param lecturaPasoParametrosService  Parámetro que determina el paso de información
+   *                                      entre pantallas.
+   * @param alertController Parámetro que determina el servicio para mostrar mensajes al usuario
+  */
   constructor( private router: Router, private sqlite: SQLite, 
     private lecturaPasoParametrosService: LecturaPasoParametrosService,
     public alertController: AlertController ) {
@@ -33,8 +49,17 @@ export class MidiarioPage implements OnInit {
       });
   }
 
+  /**
+   * <b>Descripción:</b> Determina la construcción del componente<br>
+   * @author jcharris
+  */
   ngOnInit() { }
 
+  /**
+   * <b>Descripción:</b> Método encargado de cargar la información relacionadas con las
+   * reflexiones diarias realizadas por el usuario.<br>
+   * @author jcharris
+  */
   private cargarInfo(): void{
     this.sqlite.create({
       name: "data.db",
@@ -69,6 +94,11 @@ export class MidiarioPage implements OnInit {
     })
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de editar los registros de diario<br>
+   * @author jcharris
+   * @param diarioDTO Parámetro que determina la información del registro de diario
+  */
   public editarRegistro( diarioDTO: DiarioDTO ): void{
     this.lecturaPasoParametrosService.infoLibro.clear();
     this.lecturaPasoParametrosService.infoLibro.set("idDiario", diarioDTO.idDiario.toString());
@@ -77,10 +107,20 @@ export class MidiarioPage implements OnInit {
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de navegar al formulario para la persistencia de la información<br>
+   * @author jcharris
+  */
   public crearRegistro(): void{
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de confirmar si se quiere realizar la operación de eliminación<br>
+   * @author jcharris
+   * @param idDiario Parámetro que determina el identificador del registro de diario
+   * @param fecha Parámetro que determina la información de la fecha
+  */
   async eliminar( idDiario: number, fecha: string ) {
     const alert = await this.alertController.create({
       header: 'Confirmación',
@@ -105,6 +145,12 @@ export class MidiarioPage implements OnInit {
     await alert.present();
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de eliminar un registro de diario<br>
+   * @author jcharris
+   * @param idDiario Parámetro que determina el identificador del registro de diario
+   * @param fecha Parámetro que determina la información de la fecha
+  */
   public eliminarRegistro( idDiario: number, fecha: string ){
     if( idDiario !== null && idDiario !== undefined && fecha !== null && fecha !== undefined ){
       this.sqlite.create({
@@ -136,6 +182,12 @@ export class MidiarioPage implements OnInit {
     }
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de mostrar un mensaje descriptivo al usuario<br>
+   * @author jcharris
+   * @param titulo Parámetro que determina el título del modal informativo
+   * @param texto Parámetro que determina el texto descriptivo a mostrar
+  */
   async mostrarMensaje(titulo: string, texto: string) {
     const alert = await this.alertController.create({
       header: titulo,
