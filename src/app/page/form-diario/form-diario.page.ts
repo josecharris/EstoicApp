@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
+import { AlertController } from '@ionic/angular';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -18,7 +19,8 @@ export class FormDiarioPage implements OnInit {
   public db: SQLiteObject;
   
   constructor( private router: Router, private sqlite: SQLite,
-    private lecturaPasoParametrosService: LecturaPasoParametrosService ) { }
+    private lecturaPasoParametrosService: LecturaPasoParametrosService,
+    public alertController: AlertController ) { }
 
   ngOnInit() {
     this.router.events
@@ -46,7 +48,7 @@ export class FormDiarioPage implements OnInit {
     }).then(result =>{
       this.db = result;
     }).catch(error=>{
-      alert(error);
+      this.mostrarMensaje("¡ERROR!", error);
     })
     if( this.lecturaPasoParametrosService.infoLibro.get("idDiario") != null ){
       this.idDiario = Number(this.lecturaPasoParametrosService.infoLibro.get("idDiario"));
@@ -65,24 +67,33 @@ export class FormDiarioPage implements OnInit {
       .then(( ) => {
         this.titulo = "";
         this.contenido = "";
-        alert("Registro creado.");
+        this.mostrarMensaje("¡Operación exitosa!", "Registro creado.");
         this.redirigirAnterior();
       }).catch(error=>{
-        alert(error);
+        this.mostrarMensaje("¡ERROR!", error);
       })
     }else{
       this.db.executeSql("UPDATE DIARIO SET titulo=?, contenido=? WHERE idDiario=?", [this.titulo, this.contenido, this.idDiario])
       .then(( ) => {
-        alert("Registro actualizado.");
+        this.mostrarMensaje("¡Operación exitosa!", "Registro actualizado.");
         this.redirigirAnterior();
       }).catch(error => {
-        alert(error);
+        this.mostrarMensaje("¡ERROR!", error);
       })
     }
   }
 
   public redirigirAnterior(): void{
     this.router.navigate(['/tab-inicial/midiario']);
-  }  
+  }
+
+  async mostrarMensaje(titulo: string, texto: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: texto,
+      buttons: ["OK"],
+    });
+    await alert.present();
+  }
 
 }
