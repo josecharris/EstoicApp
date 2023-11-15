@@ -4,7 +4,7 @@ import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { filter } from 'rxjs/operators';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
-import Swal from 'sweetalert2'; 
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -22,7 +22,8 @@ export class MidiarioPage implements OnInit {
   public mapaDiarios = new Map<string, DiarioDTO[]>();
 
   constructor( private router: Router, private sqlite: SQLite, 
-    private lecturaPasoParametrosService: LecturaPasoParametrosService ) {
+    private lecturaPasoParametrosService: LecturaPasoParametrosService,
+    public alertController: AlertController ) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -58,13 +59,13 @@ export class MidiarioPage implements OnInit {
               });
             }
         }).catch(error => {
-          this.mostrarMensajeError("Se presentó el siguiente error:", error);
+          this.mostrarMensaje("Se presentó el siguiente error:", error);
         })
       }).catch(error => {
-        this.mostrarMensajeError("Se presentó el siguiente error:", error);
+        this.mostrarMensaje("Se presentó el siguiente error:", error);
       });
     }).catch(error=>{
-      this.mostrarMensajeError("Se presentó el siguiente error:", error);
+      this.mostrarMensaje("Se presentó el siguiente error:", error);
     })
   }
 
@@ -80,20 +81,28 @@ export class MidiarioPage implements OnInit {
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
-  public eliminar( idDiario: number, fecha: string ){
-    Swal.fire({
-      title: "¿Estás seguro de que deseas realizar esta operación?",
-      text: "Recuerda que no podrás revertirlo",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "¡Sí, eliminalo!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.eliminarRegistro(idDiario, fecha);
-      }
+  async eliminar( idDiario: number, fecha: string ) {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: '¿Estás seguro de querer eliminar el registro?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Acción de cancelar');
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            this.eliminarRegistro(idDiario, fecha);
+          }
+        }
+      ]
     });
+    await alert.present();
   }
 
   public eliminarRegistro( idDiario: number, fecha: string ){
@@ -107,8 +116,13 @@ export class MidiarioPage implements OnInit {
           db.executeSql('DELETE FROM DIARIO WHERE idDiario=?', [idDiario])
           .then(result => {
             let diarioFecha: DiarioDTO[] = this.mapaDiarios.get(fecha) ?? [];
-            this.mapaDiarios.set(fecha, diarioFecha?.filter(diario => diario.idDiario !=idDiario));
-            this.mostrarMensajeExito("¡Eliminado!", "El registro fue eliminado exitosamente.");
+            let filtroAplicado = diarioFecha?.filter(diario => diario.idDiario !=idDiario);
+            if(filtroAplicado.length > 0){
+              this.mapaDiarios.set(fecha, diarioFecha?.filter(diario => diario.idDiario !=idDiario));
+            }else{
+              this.mapaDiarios.clear();
+            }
+            this.mostrarMensaje("¡Eliminado!", "El registro fue eliminado exitosamente.");
           }).catch(error => {
             alert(error);
           })
@@ -121,20 +135,13 @@ export class MidiarioPage implements OnInit {
     }
   }
 
-  public mostrarMensajeExito( titulo: string, texto: string ){
-    Swal.fire({
-      title: titulo,
-      text: texto,
-      icon: "success"
+  async mostrarMensaje(titulo: string, texto: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: texto,
+      buttons: ["OK"],
     });
-  }
-
-  public mostrarMensajeError( titulo: string, texto: string ){
-    Swal.fire({
-      title: titulo,
-      text: texto,
-      icon: "error"
-    });
+    await alert.present();
   }
 
 }
