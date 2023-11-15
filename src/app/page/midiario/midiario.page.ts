@@ -121,6 +121,7 @@ export class MidiarioPage implements OnInit {
               this.mapaDiarios.set(fecha, diarioFecha?.filter(diario => diario.idDiario !=idDiario));
             }else{
               this.mapaDiarios.clear();
+              this.mostrarAcordeon = false;
             }
             this.mostrarMensaje("¡Eliminado!", "El registro fue eliminado exitosamente.");
           }).catch(error => {
