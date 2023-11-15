@@ -4,6 +4,7 @@ import { DiarioDTO } from 'src/app/dto/diario.dto';
 import { filter } from 'rxjs/operators';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { LecturaPasoParametrosService } from 'src/app/service/lectura-paso-parametros.service';
+import Swal from 'sweetalert2'; 
 
 
 @Component({
@@ -19,22 +20,6 @@ export class MidiarioPage implements OnInit {
   public listDiario: DiarioDTO[] = [];
   public mostrarAcordeon = false;
   public mapaDiarios = new Map<string, DiarioDTO[]>();
-  public alertButtons = [
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      handler: () => {
-        console.log('Alert canceled');
-      },
-    },
-    {
-      text: 'OK',
-      role: 'confirm',
-      handler: () => {
-        console.log('Alert confirmed');
-      },
-    },
-  ];
 
   constructor( private router: Router, private sqlite: SQLite, 
     private lecturaPasoParametrosService: LecturaPasoParametrosService ) {
@@ -73,13 +58,13 @@ export class MidiarioPage implements OnInit {
               });
             }
         }).catch(error => {
-          alert(error);
+          this.mostrarMensajeError("Se presentó el siguiente error:", error);
         })
       }).catch(error => {
-        alert(error);
+        this.mostrarMensajeError("Se presentó el siguiente error:", error);
       });
     }).catch(error=>{
-      alert(error);
+      this.mostrarMensajeError("Se presentó el siguiente error:", error);
     })
   }
 
@@ -95,16 +80,20 @@ export class MidiarioPage implements OnInit {
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
-  public asignarValoresEliminar( idDiario: number, fecha: string ){
-    this.idDiario = idDiario;
-    this.fecha = fecha;
-  }
-
-  setResult(ev: any) {
-    alert(`Dismissed with role: ${ev.detail.role}`);
-    if( ev.detail.role === 'confirm'){
-      this.eliminarRegistro( this.idDiario, this.fecha );
-    }
+  public eliminar( idDiario: number, fecha: string ){
+    Swal.fire({
+      title: "¿Estás seguro de que deseas realizar esta operación?",
+      text: "Recuerda que no podrás revertirlo",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "¡Sí, eliminalo!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.eliminarRegistro(idDiario, fecha);
+      }
+    });
   }
 
   public eliminarRegistro( idDiario: number, fecha: string ){
@@ -117,9 +106,9 @@ export class MidiarioPage implements OnInit {
         .then(result => {
           db.executeSql('DELETE FROM DIARIO WHERE idDiario=?', [idDiario])
           .then(result => {
-            alert("¡Registro eliminado!");
             let diarioFecha: DiarioDTO[] = this.mapaDiarios.get(fecha) ?? [];
             this.mapaDiarios.set(fecha, diarioFecha?.filter(diario => diario.idDiario !=idDiario));
+            this.mostrarMensajeExito("¡Eliminado!", "El registro fue eliminado exitosamente.");
           }).catch(error => {
             alert(error);
           })
@@ -130,6 +119,22 @@ export class MidiarioPage implements OnInit {
         alert(error);
       })
     }
+  }
+
+  public mostrarMensajeExito( titulo: string, texto: string ){
+    Swal.fire({
+      title: titulo,
+      text: texto,
+      icon: "success"
+    });
+  }
+
+  public mostrarMensajeError( titulo: string, texto: string ){
+    Swal.fire({
+      title: titulo,
+      text: texto,
+      icon: "error"
+    });
   }
 
 }
