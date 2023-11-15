@@ -10,18 +10,45 @@ import { filter } from 'rxjs/operators';
   templateUrl: './form-diario.page.html',
   styleUrls: ['./form-diario.page.scss'],
 })
+/** 
+ * <b>Descripción:</b> Componente que determina el componente para la creación y actualización de 
+ * los registros del diario<br>
+ * @autor jcharris
+*/
 export class FormDiarioPage implements OnInit {
+  /** Atributo que determina el indicador si se muestra mensaje de error */
   public mostrarMensajeError: boolean = false;
+
+  /** Atributo que determina el modo de ejecución de la pantalla */
   public modoActualizacion: boolean = false;
+
+  /** Atributo que determina el identificador del registro del diario */
   public idDiario: number;
+
+  /** Atributo que determina el título de la pantalla */
   public titulo: string;
+
+  /** Atributo que determina el contenido */
   public contenido: string;
+
+  /** Atributo que determina el registro de sqlite */
   public db: SQLiteObject;
   
+  /** 
+   * <b>Descripción:</b> constructor del componente<br>
+   * @param router  Parámetro que determina la navegación entre componentes
+   * @param sqlite  Parámetro que determina la instancia con el motor de BD
+   * @param lecturaPasoParametrosService  Parámetro que determina el paso de información
+   *                                      entre pantallas.
+   * @param alertController Parámetro que determina el servicio para mostrar mensajes al usuario
+  */
   constructor( private router: Router, private sqlite: SQLite,
     private lecturaPasoParametrosService: LecturaPasoParametrosService,
     public alertController: AlertController ) { }
 
+  /**
+   * <b>Descripción:</b> Determina la construcción del componente
+  */
   ngOnInit() {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
