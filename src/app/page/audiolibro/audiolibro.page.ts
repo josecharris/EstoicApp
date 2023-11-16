@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-audiolibro',
   templateUrl: './audiolibro.page.html',
   styleUrls: ['./audiolibro.page.scss'],
+  providers: [HttpClient]
 })
 /** 
  * <b>Descripción:</b> Componente que determina el componente para la administración
