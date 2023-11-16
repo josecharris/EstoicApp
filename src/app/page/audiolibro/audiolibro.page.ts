@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -61,7 +62,7 @@ export class AudiolibroPage implements OnInit {
    * <b>Descripción:</b> constructor del componente<br>
    * @author jcharris
   */
-  constructor() { }
+  constructor( private http: HttpClient ) { }
 
   /**
    * <b>Descripción:</b> Determina la construcción del componente<br>
@@ -76,7 +77,7 @@ export class AudiolibroPage implements OnInit {
    * @param numeroLibro Parámetro que determina el número del libro seleccionado
   */
   public mostrarAudioLibro(numeroLibro: number): void{
-    if (navigator.onLine) {
+    if ( this.estaConectadoInternet() ) {
       this.mostrarMsjCon = false;
       if(numeroLibro === 1){
         this.mostrarReproductor = true;
@@ -259,6 +260,24 @@ export class AudiolibroPage implements OnInit {
       this.mostrarReproductor = false;
       this.mostrarBotones = false;
     }
+  }
+
+  /**
+   * <b>Descripción:</b> Método encargado de verificar si se está conectado a internet<br>
+   * @author jcharris
+   * @returns resultado Resultado de la verificación si se está conectado a internet. 
+  */
+  public estaConectadoInternet(): boolean{
+    const url = 'https://www.google.com';
+    let resultado: boolean = false;
+    this.http.get(url).subscribe(() => {
+        resultado = true;
+      },
+      error => {
+        resultado = false;
+      }
+    );
+    return resultado;
   }
 
   /**
