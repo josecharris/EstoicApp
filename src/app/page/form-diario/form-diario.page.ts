@@ -19,17 +19,17 @@ export class FormDiarioPage implements OnInit {
   /** Atributo que determina el indicador si se muestra mensaje de error */
   public mostrarMensajeError: boolean = false;
 
-  /** Atributo que determina el modo de ejecución de la pantalla */
-  public modoActualizacion: boolean = false;
-
   /** Atributo que determina el identificador del registro del diario */
-  public idDiario: number;
+  public idDiario: number | null;
 
   /** Atributo que determina el título de la pantalla */
   public titulo: string;
 
   /** Atributo que determina el contenido */
   public contenido: string;
+
+  /** Atributo que determina el tipo de operación */
+  public tipoOperacion: string;
 
   /** Atributo que determina el registro de sqlite */
   public db: SQLiteObject;
@@ -92,8 +92,9 @@ export class FormDiarioPage implements OnInit {
       this.idDiario = Number(this.lecturaPasoParametrosService.infoLibro.get("idDiario"));
       this.titulo = this.lecturaPasoParametrosService.infoLibro.get("titulo")!;
       this.contenido = this.lecturaPasoParametrosService.infoLibro.get("contenido")!;
-      this.modoActualizacion = true;
     }
+
+    this.tipoOperacion = this.lecturaPasoParametrosService.infoLibro.get("tipoOperacion")!;
     this.lecturaPasoParametrosService.infoLibro.clear();
   }
 
@@ -104,7 +105,7 @@ export class FormDiarioPage implements OnInit {
   */
   private agregarDiario(fecha: string) : void{
     let query: string = "";
-    if(!this.modoActualizacion){
+    if( this.tipoOperacion === "CREACION" ){
       query = "INSERT INTO DIARIO (fecha, titulo, contenido) VALUES ('" + fecha +"', '"+this.titulo +"', '"+ this.contenido +"')";
       this.db.executeSql(query, [])
       .then(( ) => {
@@ -115,11 +116,15 @@ export class FormDiarioPage implements OnInit {
       }).catch(error=>{
         this.mostrarMensaje("¡ERROR!", error);
       })
-    }else{
+    }else if( this.tipoOperacion === "MODIFICACION" ){
       this.db.executeSql("UPDATE DIARIO SET titulo=?, contenido=? WHERE idDiario=?", [this.titulo, this.contenido, this.idDiario])
       .then(( ) => {
         this.mostrarMensaje("¡Operación exitosa!", "Registro actualizado.");
         this.redirigirAnterior();
+        this.lecturaPasoParametrosService.infoLibro.clear();
+        this.idDiario = null;
+        this.titulo = "";
+        this.contenido = "";
       }).catch(error => {
         this.mostrarMensaje("¡ERROR!", error);
       })

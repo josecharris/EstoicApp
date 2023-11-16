@@ -104,6 +104,7 @@ export class MidiarioPage implements OnInit {
     this.lecturaPasoParametrosService.infoLibro.set("idDiario", diarioDTO.idDiario.toString());
     this.lecturaPasoParametrosService.infoLibro.set("titulo", diarioDTO.titulo);
     this.lecturaPasoParametrosService.infoLibro.set("contenido", diarioDTO.contenido);
+    this.lecturaPasoParametrosService.infoLibro.set("tipoOperacion", "MODIFICACION");
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
@@ -113,6 +114,7 @@ export class MidiarioPage implements OnInit {
   */
   public crearRegistro(): void{
     this.lecturaPasoParametrosService.infoLibro.clear();
+    this.lecturaPasoParametrosService.infoLibro.set("tipoOperacion", "CREACION");
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
