@@ -87,7 +87,8 @@ export class FormDiarioPage implements OnInit {
     }).catch(error=>{
       this.mostrarMensaje("¡ERROR!", error);
     })
-    if( this.lecturaPasoParametrosService.infoLibro.get("idDiario") != null ){
+    if( this.lecturaPasoParametrosService.infoLibro.get("idDiario") !== null && 
+      this.lecturaPasoParametrosService.infoLibro.get("idDiario") !== undefined){
       this.idDiario = Number(this.lecturaPasoParametrosService.infoLibro.get("idDiario"));
       this.titulo = this.lecturaPasoParametrosService.infoLibro.get("titulo")!;
       this.contenido = this.lecturaPasoParametrosService.infoLibro.get("contenido")!;
