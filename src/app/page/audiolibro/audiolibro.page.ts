@@ -5,27 +5,76 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './audiolibro.page.html',
   styleUrls: ['./audiolibro.page.scss'],
 })
+/** 
+ * <b>Descripción:</b> Componente que determina el componente para la administración
+ * de audiolibros<br>
+ * @autor jcharris
+*/
 export class AudiolibroPage implements OnInit {
+
+  /** Atributo que determina el título del componente */
   public titulo: string = "";
+
+  /** Atributo que determina el indicador para mostrar mensaje descriptivo */
   public mostrarMsjCon: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar el reproductor */
   public mostrarReproductor: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar el contenido de meditaciones */
   public mostrarMeditaciones: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar el contenido del manual */
   public mostrarManual: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar el contenido de lecciones */
   public mostrarLecciones: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar la primera epístola a Lucilio */
   public mostrarEpistolaLucilio1: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar la segunda epístola a Lucilio */
   public mostrarEpistolaLucilio2: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar la tercera epístola a Lucilio */
   public mostrarEpistolaLucilio3: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar la cuarta epístola a Lucilio */
   public mostrarEpistolaLucilio4: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar la quinta epístola a Lucilio */
   public mostrarEpistolaLucilio5: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar la sexta epístola a Lucilio */
   public mostrarEpistolaLucilio6: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar el contenido sobre la brevedad de la vida */
   public mostrarSobreBrevedad: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar el contenido sobre las disertaciones */
   public mostrarDisertaciones: boolean = false;
+
+  /** Atributo que determina el indicador para mostrar mostrar los botones */
   public mostrarBotones: boolean = true;
+
+  /** 
+   * <b>Descripción:</b> constructor del componente<br>
+   * @author jcharris
+  */
   constructor() { }
 
+  /**
+   * <b>Descripción:</b> Determina la construcción del componente<br>
+   * @author jcharris
+  */
   ngOnInit() {
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de mostrar el audiolibro seleccionado<br>
+   * @author jcharris
+   * @param numeroLibro Parámetro que determina el número del libro seleccionado
+  */
   public mostrarAudioLibro(numeroLibro: number): void{
     if (navigator.onLine) {
       this.mostrarMsjCon = false;
