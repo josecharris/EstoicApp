@@ -112,6 +112,7 @@ export class MidiarioPage implements OnInit {
    * @author jcharris
   */
   public crearRegistro(): void{
+    this.lecturaPasoParametrosService.infoLibro.clear();
     this.router.navigate(['/tab-inicial/form-diario']);
   }
 
