@@ -1,8 +1,5 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <p class="titulo-principal">EstoicApp</p><br>
-    <ion-button (click)="navegarComponenteMenu()" id="btn-home" color="dark">
-      <ion-icon slot="icon-only" name="home"></ion-icon>
-    </ion-button>
+    <ng-lottie [options]="options" (animationCreated)="created($event)"></ng-lottie>
   </div>
 </ion-content>
