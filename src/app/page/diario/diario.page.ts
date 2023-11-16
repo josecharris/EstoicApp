@@ -6,11 +6,30 @@ import { Router } from '@angular/router';
   templateUrl: './diario.page.html',
   styleUrls: ['./diario.page.scss'],
 })
+
+/** 
+ * <b>Descripción:</b> Componente que determina el componente para la funcionalidad de diario<br>
+ * @autor jcharris
+*/
 export class DiarioPage implements OnInit {
 
+  /** Atributo que determina el valor de la reflexión */
   public reflexion: string = "";
+
+  /** Atributo que determina la lista de títulos */
   public listaTitulos: string[] = [];
+
+  /** 
+   * <b>Descripción:</b> constructor del componente<br>
+   * @author jcharris
+   * @param router  Parámetro que determina la navegación entre componentes
+  */
   constructor( private router: Router ) { }
+
+  /**
+   * <b>Descripción:</b> Determina la construcción del componente<br>
+   * @author jcharris
+  */
   ngOnInit() {
     this.listaTitulos.push("La libertad no se consigue con la saciedad de lo deseado, sino con la supresión del deseo");
     this.listaTitulos.push("En compañía, guárdate de hablar mucho de tus propios actos o de las penalidades que has pasado; pues, aunque a ti te complazca hacer mención de ello, no complacerá a los otros escucharte.");
@@ -59,10 +78,20 @@ export class DiarioPage implements OnInit {
     this.reflexion = this.listaTitulos[this.getRandomInt(0, this.listaTitulos.length)];
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de persistir información de diario<br>
+   * @author jcharris
+   * @param min Parámetro que determina un valor mínimo
+   * @param max Parámetro que determina el valor máximo
+  */
   private getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de redirigir a la pantalla de mi diario<br>
+   * @author jcharris
+  */
   public redirigirMiDiario(): void{
     this.router.navigate(['/tab-inicial/midiario']);
   }
