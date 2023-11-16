@@ -261,6 +261,10 @@ export class AudiolibroPage implements OnInit {
     }
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado de habilitar los botones para volver<br>
+   * @author jcharris
+  */
   public volverBotones(): void{
     this.mostrarBotones = true;
     this.mostrarReproductor = false;
