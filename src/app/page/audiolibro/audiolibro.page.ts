@@ -1,11 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-audiolibro',
   templateUrl: './audiolibro.page.html',
-  styleUrls: ['./audiolibro.page.scss'],
-  providers: [HttpClient]
+  styleUrls: ['./audiolibro.page.scss']
 })
 /** 
  * <b>Descripción:</b> Componente que determina el componente para la administración
@@ -63,7 +62,7 @@ export class AudiolibroPage implements OnInit {
    * <b>Descripción:</b> constructor del componente<br>
    * @author jcharris
   */
-  constructor( private http: HttpClient ) { }
+  constructor(  ) { }
 
   /**
    * <b>Descripción:</b> Determina la construcción del componente<br>
@@ -269,15 +268,22 @@ export class AudiolibroPage implements OnInit {
    * @returns resultado Resultado de la verificación si se está conectado a internet. 
   */
   public estaConectadoInternet(): boolean{
-    const url = 'https://www.google.com';
     let resultado: boolean = false;
-    this.http.get(url).subscribe(() => {
-        resultado = true;
-      },
-      error => {
-        resultado = false;
+    const connection = navigator.onLine || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+
+    if (connection) {
+      const connectionType = connection.type;
+
+      console.log('Tipo de conexión:', connectionType);
+
+      if (connectionType === 'none' || connectionType === 'unknown') {
+        console.log('Desconectado de Internet');
+      } else {
+        console.log('Conectado a Internet');
       }
-    );
+    } else {
+      console.log('La API navigator.connection no es compatible en este navegador.');
+    }
     return resultado;
   }
 
