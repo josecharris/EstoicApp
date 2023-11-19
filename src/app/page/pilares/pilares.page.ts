@@ -13,6 +13,10 @@ export class PilaresPage implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * <b>Descripción:</b> Método encargado redirigir a la pantalla de conceptos<br>
+   * @author jcharris
+  */
   public volver(): void{
     this.router.navigate(['/tab-inicial/conceptos']);
   }
